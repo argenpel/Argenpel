@@ -1,0 +1,9 @@
+.next/
+node_modules/
+out/
+build/
+coverage/
+package-lock.json
+docs/project-context.local.md
+.agent-tmp/
+.codex-remote-attachments/

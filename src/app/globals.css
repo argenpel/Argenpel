@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+:root {
+  --ap-brand-teal: #02989e;
+  --ap-brand-teal-dark: #006c70;
+  --ap-brand-teal-light: #c7d4d5;
+  --ap-neutral-surface: #f2f2f2;
+  --ap-neutral-ink: #173638;
+  --ap-neutral-border: #c7d4d5;
+  --ap-neutral-white: #ffffff;
+  --ap-placeholder: #656565;
+  --ap-page-gutter: clamp(1rem, 4vw, 2.5rem);
+}
+
+@theme inline {
+  --color-brand: var(--ap-brand-teal);
+  --color-brand-dark: var(--ap-brand-teal-dark);
+  --color-brand-light: var(--ap-brand-teal-light);
+  --color-surface: var(--ap-neutral-surface);
+  --color-ink: var(--ap-neutral-ink);
+  --color-border: var(--ap-neutral-border);
+  --color-placeholder: var(--ap-placeholder);
+  --font-sans: var(--font-inter), Inter, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--ap-neutral-surface);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--ap-neutral-surface);
+  color: var(--ap-neutral-ink);
+  font-family: var(--font-inter), Inter, Arial, sans-serif;
+}
+
+::selection {
+  background: var(--ap-brand-teal);
+  color: var(--ap-neutral-surface);
+}
+
+.contact-field:-webkit-autofill {
+  box-shadow: inset 0 0 0 1000px var(--ap-neutral-white);
+  -webkit-text-fill-color: var(--ap-neutral-ink);
+}
