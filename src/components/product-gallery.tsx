@@ -11,6 +11,25 @@ type ProductGalleryProps = {
   productName: string;
 };
 
+const arrowButtonClassName =
+  "absolute top-1/2 z-10 flex size-11 -translate-y-1/2 items-center justify-center text-ink hover:text-brand-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-dark";
+
+function GalleryChevron({ previous = false }: { previous?: boolean }) {
+  return (
+    <svg
+      aria-hidden="true"
+      className={cn("size-7", previous && "rotate-180")}
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      viewBox="0 0 24 24"
+    >
+      <path d="m9 6 6 6-6 6" stroke="white" strokeWidth="5" />
+      <path d="m9 6 6 6-6 6" stroke="currentColor" strokeWidth="2.5" />
+    </svg>
+  );
+}
+
 export function ProductGallery({ images, productName }: ProductGalleryProps) {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const selectedImage = images[selectedIndex];
@@ -49,25 +68,19 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
         <div aria-label={`Imágenes de ${productName}`} role="group">
           <button
             aria-label={`Ver imagen anterior de ${productName}`}
-            className={cn(
-              "absolute top-1/2 left-3 z-10 flex size-11 -translate-y-1/2 items-center justify-center rounded-full bg-ink/80 text-3xl leading-none text-white",
-              "opacity-100 transition-opacity hover:bg-ink focus-visible:opacity-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:opacity-0 sm:group-focus-within:opacity-100 sm:group-hover:opacity-100",
-            )}
+            className={cn(arrowButtonClassName, "left-2")}
             onClick={() => rotate(-1)}
             type="button"
           >
-            <span aria-hidden="true">‹</span>
+            <GalleryChevron previous />
           </button>
           <button
             aria-label={`Ver imagen siguiente de ${productName}`}
-            className={cn(
-              "absolute top-1/2 right-3 z-10 flex size-11 -translate-y-1/2 items-center justify-center rounded-full bg-ink/80 text-3xl leading-none text-white",
-              "opacity-100 transition-opacity hover:bg-ink focus-visible:opacity-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:opacity-0 sm:group-focus-within:opacity-100 sm:group-hover:opacity-100",
-            )}
+            className={cn(arrowButtonClassName, "right-2")}
             onClick={() => rotate(1)}
             type="button"
           >
-            <span aria-hidden="true">›</span>
+            <GalleryChevron />
           </button>
           <p aria-live="polite" className="sr-only">
             Imagen {selectedIndex + 1} de {images.length}
