@@ -29,7 +29,12 @@ const differentiators = [
 export default function CompanyPage() {
   return (
     <main>
-      <PageHero active="company" label="SOBRE NOSOTROS" title="Empresa" />
+      <PageHero
+        active="company"
+        imageSrc="/images/company/planta-industrial-argenpel-header-empresa.jpg"
+        label="SOBRE NOSOTROS"
+        title="Empresa"
+      />
 
       <section className="px-6 py-16 sm:px-10 sm:py-20 lg:py-16">
         <div className="mx-auto max-w-[1262px]">
