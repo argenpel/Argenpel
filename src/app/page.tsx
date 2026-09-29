@@ -8,7 +8,29 @@ import {
   VisitBanner,
 } from "@/components/sections/shared-banners";
 import { categories } from "@/data/categories";
-import { products } from "@/data/products";
+import type { ProductCategory } from "@/types/product";
+
+const homeCategoryContent: Record<
+  ProductCategory["id"],
+  { imageSrc: string; label: string }
+> = {
+  higienico: {
+    imageSrc: "/images/categories/papel-higienico.png",
+    label: "Papel higiénico",
+  },
+  "toalla-intercalada": {
+    imageSrc: "/images/categories/toalla-intercalada.png",
+    label: "Toalla intercalada",
+  },
+  "toalla-en-rollo": {
+    imageSrc: "/images/categories/toalla-en-rollo.png",
+    label: "Toalla en rollo",
+  },
+  "bobina-industrial": {
+    imageSrc: "/images/categories/bobina-industrial.png",
+    label: "Bobina industrial",
+  },
+};
 
 export default function HomePage() {
   return (
@@ -41,28 +63,24 @@ export default function HomePage() {
 
           <div className="mt-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
             {categories.map((category) => {
-              const photo = products.find(
-                (product) => product.category === category.id,
-              )?.images[0];
+              const content = homeCategoryContent[category.id];
               return (
                 <Link
                   className="group flex min-h-56 flex-col items-center justify-start rounded-xl focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-brand"
                   href={`/productos/${category.slug}`}
                   key={category.id}
                 >
-                  {photo && (
-                    <div className="relative aspect-[4/3] w-full max-w-[240px] overflow-hidden rounded-xl border border-border bg-white">
-                      <Image
-                        alt=""
-                        src={photo.src}
-                        fill
-                        sizes="240px"
-                        className="object-contain"
-                      />
-                    </div>
-                  )}
+                  <div className="relative size-[152px]">
+                    <Image
+                      alt=""
+                      src={content.imageSrc}
+                      fill
+                      sizes="152px"
+                      className="object-contain"
+                    />
+                  </div>
                   <h3 className="mt-9 text-2xl leading-9 font-semibold uppercase transition-colors group-hover:text-brand-dark">
-                    {category.name}
+                    {content.label}
                   </h3>
                 </Link>
               );
