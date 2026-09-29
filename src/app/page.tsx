@@ -36,6 +36,14 @@ export default function HomePage() {
   return (
     <main>
       <section className="relative grid min-h-[100svh] grid-rows-[auto_minmax(0,1fr)] overflow-hidden bg-placeholder text-center text-surface">
+        <Image
+          alt=""
+          className="object-cover object-center"
+          fill
+          priority
+          sizes="100vw"
+          src="/images/home/planta-industrial-argenpel.png"
+        />
         <SiteHeader active="home" />
         <div className="relative z-10 flex min-h-0 items-center justify-center px-[var(--ap-page-gutter)] pt-4 pb-[clamp(2rem,calc(90svh-37rem),11.5rem)]">
           <div className="flex flex-col items-center">
