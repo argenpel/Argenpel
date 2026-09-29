@@ -111,7 +111,12 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
   return (
     <main>
-      <PageHero active="products" label="PRODUCTOS" title={category.name} />
+      <PageHero
+        active="products"
+        imageSrc="/images/products/papeles-argenpel-header-productos.jpg"
+        label="PRODUCTOS"
+        title={category.name}
+      />
 
       <section className="px-6 py-2 sm:px-10 lg:py-2">
         <div className="mx-auto max-w-[1250px]">

@@ -24,7 +24,11 @@ const fieldClassName =
 export default function ContactPage() {
   return (
     <main>
-      <PageHero active="contact" title="Contactanos" />
+      <PageHero
+        active="contact"
+        imageSrc="/images/contact/bobinas-papel-argenpel-contacto.jpg"
+        title="Contactanos"
+      />
 
       <section className="grid grid-cols-[minmax(0,1fr)] lg:min-h-[824px] lg:grid-cols-[minmax(320px,510px)_minmax(0,1fr)]">
         <aside className="min-w-0 bg-brand px-[clamp(1.5rem,8vw,3.5rem)] py-16 text-surface lg:px-[clamp(3.5rem,6.3vw,5.6875rem)] lg:py-[105px]">
