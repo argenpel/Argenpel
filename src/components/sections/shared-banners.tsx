@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export function SocialBanner() {
   return (
     <section className="flex min-h-[198px] items-center justify-center bg-surface px-6 text-center">
@@ -39,7 +41,14 @@ export function SocialBanner() {
 export function VisitBanner() {
   return (
     <section className="relative flex min-h-[244px] items-center justify-center overflow-hidden bg-placeholder px-6 text-center text-surface">
-      <h2 className="text-[clamp(1.5rem,7.5vw,2.5rem)] leading-tight font-bold whitespace-nowrap">
+      <Image
+        alt=""
+        src="/images/shared/planta-industrial-argenpel-banner-inferior.jpg"
+        fill
+        sizes="100vw"
+        className="object-cover object-center"
+      />
+      <h2 className="relative z-10 text-[clamp(1.5rem,7.5vw,2.5rem)] leading-tight font-bold whitespace-nowrap">
         Gracias por visitarnos
       </h2>
     </section>
