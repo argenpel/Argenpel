@@ -69,13 +69,14 @@ export default function HomePage() {
             })}
           </div>
 
-          <span
-            aria-disabled="true"
+          <a
+            href="https://drive.google.com/file/d/1L4Qa29-MlqF6nlCG-Q5xqnvUORYnlf5G/view?usp=drive_link"
+            target="_blank"
+            rel="noreferrer"
             className="mt-12 inline-flex min-h-12 items-center justify-center rounded-full border border-border px-9 text-base font-semibold tracking-[0.012em] text-brand-dark"
-            title="El catálogo todavía no está disponible"
           >
             DESCARGÁ NUESTRO CATÁLOGO
-          </span>
+          </a>
         </div>
       </section>
 
