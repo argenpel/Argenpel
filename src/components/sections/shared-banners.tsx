@@ -5,7 +5,7 @@ import { companyLinks } from "@/data/company";
 export function SocialBanner() {
   return (
     <section className="flex min-h-[198px] items-center justify-center bg-surface px-6 text-center">
-      <h2 className="text-[clamp(1.75rem,8vw,2.25rem)] leading-tight font-semibold whitespace-nowrap text-brand-dark">
+      <h2 className="text-[clamp(1.25rem,6.5vw,2.25rem)] leading-tight font-semibold whitespace-nowrap text-brand-dark">
         <a
           href={companyLinks.instagram.url}
           target="_blank"

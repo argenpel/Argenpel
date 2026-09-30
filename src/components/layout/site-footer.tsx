@@ -1,12 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const footerLinks = [
-  { label: "Inicio", href: "/" },
-  { label: "Productos", href: "/productos/higienico" },
-  { label: "Empresa", href: "/empresa" },
-  { label: "Contacto", href: "/contacto" },
-];
+import { navigation } from "@/data/navigation";
 
 export function SiteFooter() {
   return (
@@ -29,7 +24,7 @@ export function SiteFooter() {
         <div className="flex flex-col items-center gap-7 text-center">
           <nav aria-label="Navegación del pie">
             <ul className="flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm font-semibold tracking-[0.012em] sm:text-base">
-              {footerLinks.map((item) => (
+              {navigation.map((item) => (
                 <li key={item.href}>
                   <Link
                     className="inline-flex min-h-11 items-center rounded-sm px-1 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-surface"
