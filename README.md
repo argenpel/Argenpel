@@ -9,7 +9,7 @@ Next.js, React, TypeScript y Tailwind CSS. Tests con Vitest.
 
 ## Requisitos
 
-- Node.js 20.9 o superior (CI usa la versión de `.nvmrc`)
+- Node.js 24 (ver `.nvmrc`; CI usa la misma versión)
 
 ## Desarrollo local
 
