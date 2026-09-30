@@ -1,5 +1,7 @@
 import type { NextConfig } from "next";
 
+import { categories } from "./src/data/categories";
+
 const securityHeaders = [
   { key: "Content-Security-Policy", value: "frame-ancestors 'none'" },
   { key: "X-Frame-Options", value: "DENY" },
@@ -16,6 +18,16 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
+  },
+  // There is no products index; send it to the first category.
+  async redirects() {
+    return [
+      {
+        source: "/productos",
+        destination: `/productos/${categories[0].slug}`,
+        permanent: false,
+      },
+    ];
   },
 };
 
