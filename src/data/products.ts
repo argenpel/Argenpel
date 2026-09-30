@@ -19,7 +19,7 @@ export const products: Product[] = [
     perforation: ["with", "without"],
     images: [
       {
-        src: "/images/products/institutional-toilet-paper-eco.png",
+        src: "/images/products/institutional-toilet-paper-eco.jpg",
         alt: "Pack de papel higiénico institucional blanco ecológico de 8 rollos",
       },
     ],
@@ -41,7 +41,7 @@ export const products: Product[] = [
     perforation: ["with", "without"],
     images: [
       {
-        src: "/images/products/institutional-toilet-paper-premium.png",
+        src: "/images/products/institutional-toilet-paper-premium.jpg",
         alt: "Pack de papel higiénico institucional blanco premium de 8 rollos",
       },
     ],
@@ -61,11 +61,11 @@ export const products: Product[] = [
     perforation: ["with", "without"],
     images: [
       {
-        src: "/images/products/family-toilet-paper-30-1.png",
+        src: "/images/products/family-toilet-paper-30-1.jpg",
         alt: "Papel higiénico familiar de 30 rollos con envase azul",
       },
       {
-        src: "/images/products/family-toilet-paper-30-2.png",
+        src: "/images/products/family-toilet-paper-30-2.jpg",
         alt: "Papel higiénico familiar de 30 rollos con envase rojo",
       },
     ],
@@ -85,11 +85,11 @@ export const products: Product[] = [
     carryHandle: true,
     images: [
       {
-        src: "/images/products/family-toilet-paper-12-1.png",
+        src: "/images/products/family-toilet-paper-12-1.jpg",
         alt: "Papel higiénico familiar de 12 rollos con agarre y envase azul",
       },
       {
-        src: "/images/products/family-toilet-paper-12-2.png",
+        src: "/images/products/family-toilet-paper-12-2.jpg",
         alt: "Papel higiénico familiar de 12 rollos con agarre y envase rojo",
       },
     ],
@@ -109,11 +109,11 @@ export const products: Product[] = [
     sheetSizes: ["20 × 24", "20 × 36"],
     images: [
       {
-        src: "/images/products/interfolded-towel-white-2.png",
+        src: "/images/products/interfolded-towel-white-2.jpg",
         alt: "Toallas intercaladas blancas premium sobre su caja",
       },
       {
-        src: "/images/products/interfolded-towel-white-1.png",
+        src: "/images/products/interfolded-towel-white-1.jpg",
         alt: "Toallas intercaladas blancas premium",
       },
     ],
@@ -132,11 +132,11 @@ export const products: Product[] = [
     sheetSizes: ["20 × 24", "20 × 36"],
     images: [
       {
-        src: "/images/products/interfolded-towel-beige-2.png",
+        src: "/images/products/interfolded-towel-beige-2.jpg",
         alt: "Toallas intercaladas beige premium sobre su caja",
       },
       {
-        src: "/images/products/interfolded-towel-beige-1.png",
+        src: "/images/products/interfolded-towel-beige-1.jpg",
         alt: "Toallas intercaladas beige premium",
         scale: 1.064,
       },
@@ -157,16 +157,16 @@ export const products: Product[] = [
     perforation: ["with", "without"],
     images: [
       {
-        src: "/images/products/roll-towel-4.png",
+        src: "/images/products/roll-towel-4.jpg",
         alt: "Toalla en rollo, pack de 4 unidades",
         objectPosition: "center 70%",
       },
       {
-        src: "/images/products/roll-towel-3.png",
+        src: "/images/products/roll-towel-3.jpg",
         alt: "Toalla en rollo, pack de 3 unidades",
       },
       {
-        src: "/images/products/roll-towel-2.png",
+        src: "/images/products/roll-towel-2.jpg",
         alt: "Toalla en rollo, pack de 2 unidades",
       },
     ],
@@ -187,7 +187,7 @@ export const products: Product[] = [
     rollHeightCm: [21, 24],
     images: [
       {
-        src: "/images/products/industrial-double-ply-roll.png",
+        src: "/images/products/industrial-double-ply-roll.jpg",
         alt: "Pack de 2 bobinas industriales de doble hoja",
       },
     ],

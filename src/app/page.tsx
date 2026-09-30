@@ -20,7 +20,7 @@ export default function HomePage() {
           fill
           priority
           sizes="100vw"
-          src="/images/home/planta-industrial-argenpel.png"
+          src="/images/home/planta-industrial-argenpel.jpg"
         />
         <SiteHeader active="home" />
         <div className="relative z-10 flex min-h-0 items-center justify-center px-[var(--ap-page-gutter)] pt-4 pb-[clamp(2rem,calc(90svh-37rem),11.5rem)]">
