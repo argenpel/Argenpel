@@ -6,6 +6,8 @@ import { PlaceholderMedia } from "@/components/ui/placeholder-media";
 
 export const metadata: Metadata = {
   title: "Empresa",
+  description:
+    "Conocé a Argenpel: quiénes somos, producción, calidad y distribución.",
 };
 
 const differentiators = [

@@ -10,6 +10,8 @@ import {
 
 export const metadata: Metadata = {
   title: "Contacto",
+  description:
+    "Contactá a Argenpel para consultas y pedidos de venta por mayor.",
 };
 
 const contactChannels = [

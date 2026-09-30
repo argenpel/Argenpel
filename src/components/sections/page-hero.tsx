@@ -3,7 +3,7 @@ import Image from "next/image";
 import { SiteHeader } from "@/components/layout/site-header";
 
 type PageHeroProps = {
-  active: "products" | "company" | "contact";
+  active?: "products" | "company" | "contact";
   imageSrc?: string;
   label?: string;
   title: string;

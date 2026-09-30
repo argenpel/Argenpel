@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
+import { isIndexable, siteDescription, siteUrl } from "@/lib/site";
+
 import "./globals.css";
 
 const inter = Inter({
@@ -9,11 +11,20 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: siteUrl,
   title: {
     default: "Argenpel",
     template: "%s | Argenpel",
   },
-  description: "Sitio institucional y catálogo de productos de Argenpel.",
+  description: siteDescription,
+  openGraph: {
+    type: "website",
+    locale: "es_AR",
+    siteName: "Argenpel",
+    title: "Argenpel",
+    description: siteDescription,
+  },
+  robots: isIndexable ? undefined : { index: false, follow: false },
 };
 
 export default function RootLayout({

@@ -27,8 +27,17 @@ export async function generateMetadata({
   const { category: categorySlug } = await params;
   const category = categories.find((item) => item.slug === categorySlug);
 
+  if (!category) {
+    return { title: "Productos" };
+  }
+
+  const productNames = products
+    .filter((product) => product.category === category.id)
+    .map((product) => product.name);
+
   return {
-    title: category?.name ?? "Productos",
+    title: category.name,
+    description: `${productNames.join(", ")}. Venta por mayor de Argenpel.`,
   };
 }
 
