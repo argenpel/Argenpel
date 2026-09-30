@@ -1,14 +1,16 @@
 import Image from "next/image";
 
+import { companyLinks } from "@/data/company";
+
 export function SocialBanner() {
   return (
     <section className="flex min-h-[198px] items-center justify-center bg-surface px-6 text-center">
       <h2 className="text-[clamp(1.75rem,8vw,2.25rem)] leading-tight font-semibold whitespace-nowrap text-brand-dark">
         <a
-          href="https://www.instagram.com/argenpel/?hl=es"
+          href={companyLinks.instagram.url}
           target="_blank"
           rel="noreferrer"
-          aria-label="Seguinos en Instagram, @argenpel"
+          aria-label={`Seguinos en Instagram, @${companyLinks.instagram.handle}`}
           className="inline-flex items-center gap-2"
         >
           <svg
@@ -31,7 +33,7 @@ export function SocialBanner() {
               stroke="none"
             />
           </svg>
-          <span>Seguinos en @argenpel</span>
+          <span>Seguinos en @{companyLinks.instagram.handle}</span>
         </a>
       </h2>
     </section>

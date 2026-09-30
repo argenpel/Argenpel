@@ -1,7 +1,6 @@
 export type ProductSpecification = {
   label: string;
   value: string;
-  unit?: string;
 };
 
 export type ProductCategory = {
@@ -12,7 +11,10 @@ export type ProductCategory = {
     | "bobina-industrial";
   slug: string;
   name: string;
-  description?: string;
+  home: {
+    label: string;
+    imageSrc: string;
+  };
 };
 
 export type Product = {
@@ -20,7 +22,6 @@ export type Product = {
   slug: string;
   name: string;
   titleLines?: 2;
-  code?: string;
   category: ProductCategory["id"];
   family:
     | "institutional-toilet-paper"
@@ -34,12 +35,11 @@ export type Product = {
   unitsPerPackage: number[];
   customUnits?: true;
   packagesPerPallet: number;
-  // Preserve the specified decimal notation until the weights are confirmed.
+  // Written as in the catalog: integer kilograms or three decimals ("2.200").
   packWeightsKg?: string[];
   customPackWeight?: true;
   coreSizes?: ("small" | "large")[];
   perforation?: ("with" | "without")[];
-  ply?: 1 | 2;
   rollHeightCm?: number[];
   carryHandle?: true;
   sheetSizes?: string[];

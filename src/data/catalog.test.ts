@@ -32,7 +32,19 @@ describe("catalog data", () => {
     }
   });
 
-  it("references product images that exist", () => {
+  it("writes pack weights as integers or with three decimals", () => {
+    for (const product of products) {
+      for (const weight of product.packWeightsKg ?? []) {
+        expect(weight, product.id).toMatch(/^\d+(\.\d{3})?$/);
+      }
+    }
+  });
+
+  it("references images that exist", () => {
+    for (const category of categories) {
+      expect(existsSync(publicPath(category.home.imageSrc))).toBe(true);
+    }
+
     for (const product of products) {
       for (const image of product.images) {
         expect(existsSync(publicPath(image.src)), image.src).toBe(true);

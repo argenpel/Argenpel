@@ -8,29 +8,7 @@ import {
   VisitBanner,
 } from "@/components/sections/shared-banners";
 import { categories } from "@/data/categories";
-import type { ProductCategory } from "@/types/product";
-
-const homeCategoryContent: Record<
-  ProductCategory["id"],
-  { imageSrc: string; label: string }
-> = {
-  higienico: {
-    imageSrc: "/images/categories/papel-higienico.png",
-    label: "Papel higiénico",
-  },
-  "toalla-intercalada": {
-    imageSrc: "/images/categories/toalla-intercalada.png",
-    label: "Toalla intercalada",
-  },
-  "toalla-en-rollo": {
-    imageSrc: "/images/categories/toalla-en-rollo.png",
-    label: "Toalla en rollo",
-  },
-  "bobina-industrial": {
-    imageSrc: "/images/categories/bobina-industrial.png",
-    label: "Bobina industrial",
-  },
-};
+import { companyLinks } from "@/data/company";
 
 export default function HomePage() {
   return (
@@ -70,33 +48,30 @@ export default function HomePage() {
           </h2>
 
           <div className="mt-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
-            {categories.map((category) => {
-              const content = homeCategoryContent[category.id];
-              return (
-                <Link
-                  className="group flex min-h-56 flex-col items-center justify-start rounded-xl focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-brand"
-                  href={`/productos/${category.slug}`}
-                  key={category.id}
-                >
-                  <div className="relative size-[152px]">
-                    <Image
-                      alt=""
-                      src={content.imageSrc}
-                      fill
-                      sizes="152px"
-                      className="object-contain"
-                    />
-                  </div>
-                  <h3 className="mt-9 text-2xl leading-9 font-semibold uppercase transition-colors group-hover:text-brand-dark">
-                    {content.label}
-                  </h3>
-                </Link>
-              );
-            })}
+            {categories.map((category) => (
+              <Link
+                className="group flex min-h-56 flex-col items-center justify-start rounded-xl focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-brand"
+                href={`/productos/${category.slug}`}
+                key={category.id}
+              >
+                <div className="relative size-[152px]">
+                  <Image
+                    alt=""
+                    src={category.home.imageSrc}
+                    fill
+                    sizes="152px"
+                    className="object-contain"
+                  />
+                </div>
+                <h3 className="mt-9 text-2xl leading-9 font-semibold uppercase transition-colors group-hover:text-brand-dark">
+                  {category.home.label}
+                </h3>
+              </Link>
+            ))}
           </div>
 
           <a
-            href="https://drive.google.com/file/d/1L4Qa29-MlqF6nlCG-Q5xqnvUORYnlf5G/view?usp=drive_link"
+            href={companyLinks.catalog}
             target="_blank"
             rel="noreferrer"
             className="mt-12 inline-flex min-h-12 items-center justify-center rounded-full border border-border px-9 text-base font-semibold tracking-[0.012em] text-brand-dark"

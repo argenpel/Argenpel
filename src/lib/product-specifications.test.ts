@@ -20,13 +20,13 @@ describe("getProductSpecifications", () => {
     expect(specificationsOf("institutional-toilet-paper-eco")).toEqual([
       "Calidad: blanco ecológico",
       "Presentación: 8 unidades · pallet: 90 packs",
-      "Peso por pack: 2 / 2,2 / 2,3 / 2,4 kg o a medida",
+      "Peso por pack: 2 / 2,200 / 2,300 / 2,400 kg o a medida",
       "Opciones: cono chico/grande · con/sin precorte",
     ]);
     expect(specificationsOf("institutional-toilet-paper-premium")).toEqual([
       "Calidad: blanco premium",
       "Presentación: 8 unidades · pallet: 90 packs",
-      "Peso por pack: 2,2 / 2,3 / 2,4 kg o a medida",
+      "Peso por pack: 2,200 / 2,300 / 2,400 kg o a medida",
       "Opciones: cono chico/grande · con/sin precorte",
     ]);
   });
@@ -35,7 +35,7 @@ describe("getProductSpecifications", () => {
     expect(specificationsOf("family-toilet-paper-30")).toEqual([
       "Calidad: blanco eco / blanco premium",
       "Presentación: 30 unidades · pallet: 80 packs",
-      "Peso por pack: 2,5 / 3 kg o a medida",
+      "Peso por pack: 2,500 / 3 kg o a medida",
       "Precorte: con o sin precorte",
     ]);
   });
@@ -45,7 +45,7 @@ describe("getProductSpecifications", () => {
       "Calidad: blanco premium / blanco eco",
       "Presentación: 12 rollos · pallet: 90 packs",
       "Empaque: con agarre",
-      "Peso por pack: 2,4 kg o a medida",
+      "Peso por pack: 2,400 kg o a medida",
     ]);
   });
 
@@ -68,7 +68,7 @@ describe("getProductSpecifications", () => {
     expect(specificationsOf("roll-towel")).toEqual([
       "Calidad: blanco premium / beige premium",
       "Presentación: 2 / 3 / 4 unidades · pallet: 90 packs",
-      "Peso por pack: 1,8 / 2,1 / 3 kg o a medida",
+      "Peso por pack: 1,800 / 2,100 / 3 kg o a medida",
       "Precorte: con o sin precorte",
     ]);
   });
@@ -77,7 +77,7 @@ describe("getProductSpecifications", () => {
     expect(specificationsOf("industrial-double-ply-roll")).toEqual([
       "Calidad: blanco premium / blanco eco / beige eco",
       "Presentación: 2 unidades · pallet: 80 packs",
-      "Peso por pack: 2,8 / 3,4 kg o a medida",
+      "Peso por pack: 2,800 / 3,400 kg o a medida",
       "Opciones: con/sin precorte · alto: 21 o 24 cm",
     ]);
   });

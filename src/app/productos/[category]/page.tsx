@@ -85,10 +85,7 @@ function ProductCard({
                 </span>
                 {specification.label}:{" "}
               </dt>
-              <dd className="inline">
-                {specification.value}
-                {specification.unit ? ` ${specification.unit}` : ""}
-              </dd>
+              <dd className="inline">{specification.value}</dd>
             </div>
           ))}
         </dl>

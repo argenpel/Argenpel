@@ -152,7 +152,7 @@ export const products: Product[] = [
     packageType: "pack",
     unitsPerPackage: [2, 3, 4],
     packagesPerPallet: 90,
-    packWeightsKg: ["1.800", "2.1", "3"],
+    packWeightsKg: ["1.800", "2.100", "3"],
     customPackWeight: true,
     perforation: ["with", "without"],
     images: [
@@ -184,7 +184,6 @@ export const products: Product[] = [
     packWeightsKg: ["2.800", "3.400"],
     customPackWeight: true,
     perforation: ["with", "without"],
-    ply: 2,
     rollHeightCm: [21, 24],
     images: [
       {

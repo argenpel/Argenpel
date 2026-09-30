@@ -6,15 +6,47 @@ const slashList = (values: string[]) => values.join(" / ");
 const lowerFirst = (value: string) =>
   `${value.charAt(0).toLocaleLowerCase("es-AR")}${value.slice(1)}`;
 
-const formatWeight = (value: string) => {
-  const parsed = Number(value);
+// Weights keep the notation written in the data, with a decimal comma.
+const formatWeight = (value: string) => value.replace(".", ",");
 
-  return Number.isFinite(parsed)
-    ? new Intl.NumberFormat("es-AR", { maximumFractionDigits: 3 }).format(
-        parsed,
-      )
-    : value;
+const coreSizeLabels: Record<
+  NonNullable<Product["coreSizes"]>[number],
+  string
+> = {
+  small: "chico",
+  large: "grande",
 };
+
+const formatPerforation = (
+  options: NonNullable<Product["perforation"]>,
+  separator: string,
+) => {
+  if (options.includes("with") && options.includes("without")) {
+    return `con${separator}sin precorte`;
+  }
+
+  return options.includes("with") ? "con precorte" : "sin precorte";
+};
+
+function getOptions(product: Product): ProductSpecification | undefined {
+  const { coreSizes = [], perforation = [], rollHeightCm = [] } = product;
+
+  if (perforation.length && !coreSizes.length && !rollHeightCm.length) {
+    return { label: "Precorte", value: formatPerforation(perforation, " o ") };
+  }
+
+  const options = [
+    coreSizes.length
+      ? `cono ${coreSizes.map((size) => coreSizeLabels[size]).join("/")}`
+      : undefined,
+    perforation.length ? formatPerforation(perforation, "/") : undefined,
+    rollHeightCm.length ? `alto: ${rollHeightCm.join(" o ")} cm` : undefined,
+  ].filter((option) => option !== undefined);
+
+  return options.length
+    ? { label: "Opciones", value: options.join(" · ") }
+    : undefined;
+}
 
 export function getProductSpecifications(
   product: Product,
@@ -27,12 +59,6 @@ export function getProductSpecifications(
     product.unitsPerPackage.map((value) => number.format(value)),
   );
   const pallet = `${number.format(product.packagesPerPallet)} ${product.packageType === "box" ? "cajas" : "packs"}`;
-  const weight: ProductSpecification | undefined = product.packWeightsKg?.length
-    ? {
-        label: "Peso por pack",
-        value: `${slashList(product.packWeightsKg.map(formatWeight))} kg${product.customPackWeight ? " o a medida" : ""}`,
-      }
-    : undefined;
 
   if (product.family === "interfolded-towel") {
     return [
@@ -42,53 +68,27 @@ export function getProductSpecifications(
         value: `${units} unidades${product.customUnits ? " o a medida" : ""}`,
       },
       { label: "Pallet", value: pallet },
-      {
-        label: "Medida",
-        value: product.sheetSizes?.join(" o ") ?? "",
-      },
+      ...(product.sheetSizes?.length
+        ? [{ label: "Medida", value: product.sheetSizes.join(" o ") }]
+        : []),
     ];
   }
 
-  const presentation: ProductSpecification = {
-    label: "Presentación",
-    value: `${units} ${product.carryHandle ? "rollos" : "unidades"} · pallet: ${pallet}`,
-  };
-
-  if (product.carryHandle && weight) {
-    return [
-      quality,
-      presentation,
-      { label: "Empaque", value: "con agarre" },
-      weight,
-    ];
-  }
-
-  if (!weight) {
-    return [quality, presentation];
-  }
-
-  if (product.family === "institutional-toilet-paper") {
-    return [
-      quality,
-      presentation,
-      weight,
-      { label: "Opciones", value: "cono chico/grande · con/sin precorte" },
-    ];
-  }
-
-  if (product.family === "industrial-roll") {
-    return [
-      quality,
-      presentation,
-      weight,
-      { label: "Opciones", value: "con/sin precorte · alto: 21 o 24 cm" },
-    ];
-  }
-
-  return [
+  const specifications: (ProductSpecification | undefined)[] = [
     quality,
-    presentation,
-    weight,
-    { label: "Precorte", value: "con o sin precorte" },
+    {
+      label: "Presentación",
+      value: `${units} ${product.carryHandle ? "rollos" : "unidades"} · pallet: ${pallet}`,
+    },
+    product.carryHandle ? { label: "Empaque", value: "con agarre" } : undefined,
+    product.packWeightsKg?.length
+      ? {
+          label: "Peso por pack",
+          value: `${slashList(product.packWeightsKg.map(formatWeight))} kg${product.customPackWeight ? " o a medida" : ""}`,
+        }
+      : undefined,
+    getOptions(product),
   ];
+
+  return specifications.filter((specification) => specification !== undefined);
 }
