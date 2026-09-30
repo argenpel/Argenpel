@@ -53,7 +53,9 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
           alt={selectedImage.alt}
           className="object-cover"
           fill
-          sizes="(min-width: 1330px) 500px, calc(100vw - 48px)"
+          // At most 500px wide; below that it spans the viewport minus the
+          // 24px side padding.
+          sizes="(min-width: 548px) 500px, calc(100vw - 48px)"
           src={selectedImage.src}
           style={{
             objectPosition: selectedImage.objectPosition,
