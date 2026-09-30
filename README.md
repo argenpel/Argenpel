@@ -35,6 +35,8 @@ pasos en cada push a `main` y en cada pull request.
   (ver `docs/catalog.md`).
 - Links de catálogo, Instagram y ubicación: `src/data/company.ts`.
 - Navegación de header y footer: `src/data/navigation.ts`.
+- Imágenes del hero rotativo de la home: `src/data/home.ts` (cambian cada 6 s
+  con fundido; se exportan de Figma con el oscurecido ya aplicado).
 - Fotos en `public/images/`. Subir fotos opacas como JPEG de hasta ~1600 px de
   ancho; PNG solo si necesitan transparencia.
 
