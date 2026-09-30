@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { HeroSlideshow } from "@/components/sections/hero-slideshow";
 import {
@@ -11,6 +10,9 @@ import {
 import { categories } from "@/data/categories";
 import { companyLinks } from "@/data/company";
 import { heroImages } from "@/data/home";
+import { pageMetadata } from "@/lib/metadata";
+
+export const metadata = pageMetadata({ path: "/" });
 
 export default function HomePage() {
   return (
@@ -78,7 +80,6 @@ export default function HomePage() {
 
       <SocialBanner />
       <VisitBanner />
-      <SiteFooter />
     </main>
   );
 }

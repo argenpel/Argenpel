@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { SiteFooter } from "@/components/layout/site-footer";
 import { PageHero } from "@/components/sections/page-hero";
 import { categories } from "@/data/categories";
 
@@ -37,8 +36,6 @@ export default function NotFound() {
           </Link>
         </div>
       </section>
-
-      <SiteFooter />
     </main>
   );
 }

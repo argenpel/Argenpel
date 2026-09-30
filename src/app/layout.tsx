@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
+import { SiteFooter } from "@/components/layout/site-footer";
+import { baseOpenGraph } from "@/lib/metadata";
 import { isIndexable, siteDescription, siteUrl } from "@/lib/site";
 
 import "./globals.css";
@@ -18,9 +20,7 @@ export const metadata: Metadata = {
   },
   description: siteDescription,
   openGraph: {
-    type: "website",
-    locale: "es_AR",
-    siteName: "Argenpel",
+    ...baseOpenGraph,
     title: "Argenpel",
     description: siteDescription,
   },
@@ -36,6 +36,7 @@ export default function RootLayout({
     <html lang="es">
       <body className={`${inter.variable} bg-surface text-ink antialiased`}>
         {children}
+        <SiteFooter />
       </body>
     </html>
   );

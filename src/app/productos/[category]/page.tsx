@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import { SiteFooter } from "@/components/layout/site-footer";
 import { ProductGallery } from "@/components/product-gallery";
 import { PageHero } from "@/components/sections/page-hero";
 import { VisitBanner } from "@/components/sections/shared-banners";
 import { categories } from "@/data/categories";
 import { products } from "@/data/products";
+import { pageMetadata } from "@/lib/metadata";
 import { getProductSpecifications } from "@/lib/product-specifications";
 import { cn } from "@/lib/utils";
 import type { Product } from "@/types/product";
@@ -35,10 +35,11 @@ export async function generateMetadata({
     .filter((product) => product.category === category.id)
     .map((product) => product.name);
 
-  return {
+  return pageMetadata({
     title: category.name,
     description: `${productNames.join(", ")}. Venta por mayor de Argenpel.`,
-  };
+    path: `/productos/${category.slug}`,
+  });
 }
 
 function ProductCard({
@@ -137,7 +138,6 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       </section>
 
       <VisitBanner />
-      <SiteFooter />
     </main>
   );
 }

@@ -1,18 +1,17 @@
-import type { Metadata } from "next";
-
-import { SiteFooter } from "@/components/layout/site-footer";
 import { LocationMap } from "@/components/sections/location-map";
 import { PageHero } from "@/components/sections/page-hero";
 import {
   SocialBanner,
   VisitBanner,
 } from "@/components/sections/shared-banners";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Contacto",
   description:
     "Contactá a Argenpel para consultas y pedidos de venta por mayor.",
-};
+  path: "/contacto",
+});
 
 const contactChannels = [
   { label: "WhatsApp", value: "[Número comercial]" },
@@ -60,15 +59,30 @@ export default function ContactPage() {
             <div className="mt-10 grid gap-7">
               <label className="grid gap-1.5 text-base leading-5 font-semibold tracking-[0.012em]">
                 Nombre y empresa
-                <input className={fieldClassName} name="name" type="text" />
+                <input
+                  autoComplete="name"
+                  className={fieldClassName}
+                  name="name"
+                  type="text"
+                />
               </label>
               <label className="grid gap-1.5 text-base leading-5 font-semibold tracking-[0.012em]">
                 Email
-                <input className={fieldClassName} name="email" type="email" />
+                <input
+                  autoComplete="email"
+                  className={fieldClassName}
+                  name="email"
+                  type="email"
+                />
               </label>
               <label className="grid gap-1.5 text-base leading-5 font-semibold tracking-[0.012em]">
                 Teléfono
-                <input className={fieldClassName} name="phone" type="tel" />
+                <input
+                  autoComplete="tel"
+                  className={fieldClassName}
+                  name="phone"
+                  type="tel"
+                />
               </label>
               <label className="grid gap-1.5 text-base leading-5 font-semibold tracking-[0.012em]">
                 Mensaje / comentario
@@ -94,7 +108,6 @@ export default function ContactPage() {
       <LocationMap />
       <SocialBanner />
       <VisitBanner />
-      <SiteFooter />
     </main>
   );
 }

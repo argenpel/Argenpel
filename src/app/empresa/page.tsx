@@ -1,14 +1,13 @@
-import type { Metadata } from "next";
-
-import { SiteFooter } from "@/components/layout/site-footer";
 import { PageHero } from "@/components/sections/page-hero";
 import { PlaceholderMedia } from "@/components/ui/placeholder-media";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Empresa",
   description:
     "Conocé a Argenpel: quiénes somos, producción, calidad y distribución.",
-};
+  path: "/empresa",
+});
 
 const differentiators = [
   {
@@ -74,8 +73,6 @@ export default function CompanyPage() {
           </div>
         </div>
       </section>
-
-      <SiteFooter />
     </main>
   );
 }
