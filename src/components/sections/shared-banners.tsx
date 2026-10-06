@@ -4,36 +4,15 @@ import { companyLinks } from "@/data/company";
 
 export function SocialBanner() {
   return (
-    <section className="flex min-h-[198px] items-center justify-center bg-surface px-6 text-center">
-      <h2 className="text-[clamp(1.25rem,6.5vw,2.25rem)] leading-tight font-semibold whitespace-nowrap text-brand-dark">
+    <section className="flex min-h-[198px] items-center justify-center bg-surface bg-linear-to-r from-border/35 to-border/35 px-6 text-center">
+      <h2 className="text-[clamp(1.25rem,6.5vw,1.5rem)] leading-[46px] font-semibold whitespace-nowrap text-brand-dark">
         <a
           href={companyLinks.instagram.url}
           target="_blank"
           rel="noreferrer"
           aria-label={`Seguinos en Instagram, @${companyLinks.instagram.handle}`}
-          className="inline-flex items-center gap-2"
         >
-          <svg
-            aria-hidden="true"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="size-[1em] shrink-0"
-          >
-            <rect width="18" height="18" x="3" y="3" rx="5" />
-            <circle cx="12" cy="12" r="4" />
-            <circle
-              cx="17.5"
-              cy="6.5"
-              r="1"
-              fill="currentColor"
-              stroke="none"
-            />
-          </svg>
-          <span>Seguinos en @{companyLinks.instagram.handle}</span>
+          Seguinos en @{companyLinks.instagram.handle}
         </a>
       </h2>
     </section>

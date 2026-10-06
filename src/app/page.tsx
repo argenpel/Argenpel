@@ -38,16 +38,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-surface px-6 py-20 sm:py-[88px]">
+      <section className="bg-surface px-4 py-20 sm:px-6 sm:pt-[88px] sm:pb-[81px]">
         <div className="mx-auto max-w-[1240px] text-center">
-          <h2 className="text-[clamp(1.75rem,8vw,2.5rem)] leading-tight font-bold whitespace-nowrap">
+          <h2 className="text-[clamp(1.75rem,8vw,2rem)] leading-[48px] font-medium whitespace-nowrap">
             Nuestros productos
           </h2>
 
-          <div className="mt-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+          <div className="mt-[70px] grid gap-12 sm:grid-cols-2 xl:grid-cols-4 xl:gap-8">
             {categories.map((category) => (
               <Link
-                className="group flex min-h-56 flex-col items-center justify-start rounded-xl focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-brand"
+                className="group flex flex-col items-center justify-start rounded-xl focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-brand"
                 href={`/productos/${category.slug}`}
                 key={category.id}
               >
@@ -56,11 +56,12 @@ export default function HomePage() {
                     alt=""
                     src={category.home.imageSrc}
                     fill
+                    unoptimized
                     sizes="152px"
                     className="object-contain"
                   />
                 </div>
-                <h3 className="mt-9 text-2xl leading-9 font-semibold uppercase transition-colors group-hover:text-brand-dark">
+                <h3 className="mt-[18px] text-2xl leading-9 font-semibold uppercase transition-colors group-hover:text-brand-dark">
                   {category.home.label}
                 </h3>
               </Link>
@@ -71,7 +72,7 @@ export default function HomePage() {
             href={companyLinks.catalog}
             target="_blank"
             rel="noreferrer"
-            className="mt-12 inline-flex min-h-12 items-center justify-center rounded-full border border-border px-9 text-base font-semibold tracking-[0.012em] text-brand-dark"
+            className="mt-[54px] inline-flex min-h-[45px] w-[331px] max-w-full items-center justify-center rounded-full border border-border px-4 text-sm font-semibold tracking-[0.012em] text-brand-dark sm:text-base"
           >
             DESCARGÁ NUESTRO CATÁLOGO
           </a>
