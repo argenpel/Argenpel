@@ -16,29 +16,35 @@ const hostGrotesk = localFont({
 
 export function SiteFooter() {
   return (
-    <footer className="bg-ink px-[var(--ap-page-gutter)] py-10 text-surface lg:py-[55px]">
-      <div className="mx-auto max-w-[1259px] divide-y divide-border/40 border-y border-border/40">
-        <div className="flex flex-col items-center gap-8 px-[15px] py-8 lg:grid lg:min-h-[128px] lg:grid-cols-[207px_minmax(0,1fr)_162px] lg:gap-x-[clamp(1.5rem,7.9vw,114px)] lg:gap-y-0 lg:py-0">
+    <footer className="bg-ink px-6 text-surface lg:px-[var(--ap-page-gutter)] lg:py-[55px]">
+      <div className="mx-auto max-w-[1259px] lg:divide-y lg:divide-border/40 lg:border-y lg:border-border/40">
+        <div className="grid border-b border-border/28 pt-7 pb-[9px] lg:min-h-[128px] lg:grid-cols-[207px_minmax(0,1fr)_162px] lg:items-center lg:gap-x-[clamp(1.5rem,7.9vw,114px)] lg:gap-y-0 lg:border-border/40 lg:px-[15px] lg:py-0">
           <Link
             className="shrink-0 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-surface lg:translate-y-[1.5px]"
             href="/"
             aria-label="Argenpel, inicio"
           >
-            <Image
-              alt="Papelera Argenpel"
-              className="max-w-none"
-              height={60.0722}
-              src="/brand/argenpel-footer-logo.svg"
-              unoptimized
-              width={207}
-            />
+            <picture className="block">
+              <source
+                media="(max-width: 1023px)"
+                srcSet="/brand/argenpel-mobile-footer-logo.svg"
+              />
+              <Image
+                alt="Papelera Argenpel"
+                className="h-[49px] w-[184.692px] max-w-none lg:h-[60.0722px] lg:w-[207px]"
+                height={60.0722}
+                src="/brand/argenpel-footer-logo.svg"
+                unoptimized
+                width={207}
+              />
+            </picture>
           </Link>
 
           <nav
             aria-label="Navegación del pie"
-            className="w-full lg:translate-y-[0.5px]"
+            className="mt-[25px] w-full border-t border-border/40 lg:mt-0 lg:translate-y-[0.5px] lg:border-0"
           >
-            <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-base leading-5 font-semibold tracking-[0.012em] sm:grid-cols-4 lg:grid-cols-[169fr_197fr_189fr_73fr] lg:gap-0 lg:pr-1">
+            <ul className="flex justify-between text-xs leading-[18px] lg:grid lg:grid-cols-[169fr_197fr_189fr_73fr] lg:gap-0 lg:pr-1 lg:text-base lg:leading-5 lg:font-semibold lg:tracking-[0.012em]">
               {navigation.map((item) => (
                 <li key={item.href}>
                   <Link
@@ -52,31 +58,34 @@ export function SiteFooter() {
             </ul>
           </nav>
 
-          <div className="lg:translate-y-[1.5px]">
+          <div className="-mt-[3px] flex -translate-x-2 justify-center lg:mt-0 lg:block lg:translate-x-0 lg:translate-y-[1.5px]">
             <HeaderContactLinks links={companyContactLinks} variant="footer" />
           </div>
         </div>
 
-        <div className="flex flex-col items-center gap-6 py-8 text-center lg:min-h-[115px] lg:flex-row lg:justify-between lg:gap-8 lg:py-0 lg:pl-[15px] lg:text-left">
-          <p className="text-sm leading-6 opacity-70">
-            © Argenpel · Placeholder de datos legales
+        <div className="flex min-h-[61px] items-start justify-between gap-2 pt-3 lg:min-h-[115px] lg:items-center lg:gap-8 lg:py-0 lg:pl-[15px]">
+          <p className="text-[9px] leading-[13.5px] text-border lg:text-sm lg:leading-6 lg:text-surface lg:opacity-70">
+            © Argenpel ·{" "}
+            <span className="block lg:inline">
+              Placeholder de datos legales
+            </span>
           </p>
           <a
             aria-label="Created by VNT Agencia: abrir Instagram en una nueva pestaña"
-            className="inline-flex min-h-11 shrink-0 items-center gap-[15px] rounded-sm text-border transition-colors hover:text-surface focus-visible:text-surface focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-surface"
+            className="-mt-2 inline-flex min-h-11 shrink-0 items-center gap-[5px] rounded-sm text-border transition-colors hover:text-surface focus-visible:text-surface focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-surface lg:mt-0 lg:gap-[15px]"
             href="https://www.instagram.com/vnt.agencia/"
             rel="noopener noreferrer"
             target="_blank"
           >
             <span
-              className={`${hostGrotesk.className} text-[18.232px] leading-[normal] font-medium whitespace-nowrap`}
+              className={`${hostGrotesk.className} text-[6.28px] leading-[normal] font-medium whitespace-nowrap lg:text-[18.232px]`}
               lang="en"
             >
               created by
             </span>
             <Image
               alt=""
-              className="h-[45px] w-auto max-w-none"
+              className="h-[15.5px] w-auto max-w-none lg:h-[45px]"
               height={588.62}
               src="/brand/vnt-signature-white.svg"
               unoptimized

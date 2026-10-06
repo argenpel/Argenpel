@@ -15,23 +15,39 @@ const iconSizes = {
   location: { width: 16, height: 20 },
 } as const;
 
+const menuIconSizes = {
+  whatsapp: { width: 23.2778, height: 23.3899 },
+  instagram: { width: 24, height: 24 },
+  email: { width: 25, height: 20 },
+  location: { width: 18, height: 24 },
+} as const;
+
+const menuIconCenters = {
+  whatsapp: 12,
+  instagram: 58,
+  email: 111,
+  location: 160,
+} as const;
+
 export function HeaderContactLinks({
   links,
   variant,
 }: {
   links: readonly ContactLink[];
-  variant: "mobile" | "desktop" | "footer";
+  variant: "mobile" | "desktop" | "footer" | "menu";
 }) {
   return (
     <ul
       aria-label="Canales de contacto"
       className={cn(
         "flex items-center",
-        variant === "mobile"
-          ? "mt-2 justify-between border-t border-border pt-3"
-          : variant === "footer"
-            ? "gap-0 lg:gap-0.5"
-            : "-mr-1.5 gap-0.5",
+        variant === "menu"
+          ? "relative mr-px h-11 w-[169px]"
+          : variant === "mobile"
+            ? "mt-2 justify-between border-t border-border pt-3"
+            : variant === "footer"
+              ? "gap-0 lg:gap-0.5"
+              : "-mr-1.5 gap-0.5",
       )}
     >
       {links.map(({ key, label, href }) => (
@@ -40,32 +56,47 @@ export function HeaderContactLinks({
             aria-label={label}
             className={cn(
               "flex h-11 items-center justify-center rounded-md transition-colors focus-visible:outline-2 focus-visible:outline-offset-2",
-              variant === "mobile"
-                ? "w-11 bg-brand hover:bg-brand-dark focus-visible:outline-brand-dark"
-                : variant === "footer"
-                  ? "w-11 hover:bg-brand/30 focus-visible:outline-surface lg:w-8"
-                  : "w-8 hover:bg-brand/30 focus-visible:outline-surface",
+              variant === "menu"
+                ? "absolute top-0 w-11 -translate-x-1/2 hover:bg-brand-dark focus-visible:outline-surface"
+                : variant === "mobile"
+                  ? "w-11 bg-brand hover:bg-brand-dark focus-visible:outline-brand-dark"
+                  : variant === "footer"
+                    ? "w-8 hover:bg-brand/30 focus-visible:outline-surface"
+                    : "w-8 hover:bg-brand/30 focus-visible:outline-surface",
             )}
             href={href}
+            style={
+              variant === "menu" ? { left: menuIconCenters[key] } : undefined
+            }
           >
             <span
               aria-hidden="true"
               className={cn(
                 "flex items-center justify-center",
-                variant !== "mobile" && key === "whatsapp" && "translate-x-0.5",
-                variant !== "mobile" &&
+                (variant === "desktop" || variant === "footer") &&
+                  key === "whatsapp" &&
+                  "translate-x-0.5",
+                (variant === "desktop" || variant === "footer") &&
                   key === "email" &&
                   "translate-x-px translate-y-[0.5px]",
                 key === "whatsapp" &&
+                  variant === "menu" &&
+                  "size-[23.3898px] [mask-image:url('/icons/menu-whatsapp-mask.svg')] [mask-mode:alpha] [mask-size:23.3898px_23.3898px] [mask-repeat:no-repeat]",
+                key === "whatsapp" &&
+                  variant !== "menu" &&
                   "size-5 [mask-image:url('/icons/header-whatsapp-mask.svg')] [mask-mode:alpha] [mask-size:20px_20px] [mask-repeat:no-repeat]",
               )}
             >
               <Image
                 alt=""
-                height={iconSizes[key].height}
-                src={`/icons/header-${key}.svg`}
+                height={
+                  (variant === "menu" ? menuIconSizes : iconSizes)[key].height
+                }
+                src={`/icons/${variant === "menu" ? "menu" : "header"}-${key}.svg`}
                 unoptimized
-                width={iconSizes[key].width}
+                width={
+                  (variant === "menu" ? menuIconSizes : iconSizes)[key].width
+                }
               />
             </span>
           </a>

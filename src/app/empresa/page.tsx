@@ -52,68 +52,72 @@ export default function CompanyPage() {
         active="company"
         imageSrc="/images/company/planta-industrial-argenpel-header-empresa.jpg"
         title="Empresa"
-        titleClassName="text-[32px] leading-[48px] font-semibold"
+        titleClassName="lg:text-[32px] lg:leading-[48px] lg:font-semibold"
         contentClassName="lg:pb-[74px]"
       />
 
-      <section className="px-6 py-12 sm:px-10 sm:py-20 lg:min-h-[1313px] lg:pt-[112px] lg:pb-[148px]">
+      <section className="px-6 pt-10 pb-[45px] lg:min-h-[1313px] lg:px-10 lg:pt-[112px] lg:pb-[148px]">
         <div className="mx-auto max-w-[1260px]">
-          <div className="grid items-start gap-12 lg:max-w-[1229px] lg:grid-cols-[minmax(0,492fr)_minmax(0,652fr)] lg:gap-[clamp(2rem,5.9vw,85px)]">
-            <PlaceholderMedia className="order-2 mx-auto aspect-[492/540] w-full max-w-[492px] rounded-xl border border-border bg-surface lg:order-none lg:mt-[5px]" />
-            <div className="min-w-0">
-              <h2 className="text-[clamp(1.75rem,8vw,2rem)] leading-[48px] font-semibold text-brand">
-                Quiénes somos
-              </h2>
-              <div className="mt-7 max-w-[618px] space-y-7 text-xl leading-7">
-                <p>
-                  Desde hace más de una década trabajamos con un propósito
-                  claro: satisfacer las necesidades de nuestros clientes,
-                  ofreciendo productos de calidad y desarrollando nuestra
-                  actividad bajo sólidos principios de ética, compromiso y
-                  responsabilidad.
-                </p>
-                <p>
-                  ARGENPEL es una empresa dedicada al rebobinado y
-                  fraccionamiento de papel tissue, con una propuesta orientada
-                  tanto al mercado industrial como al sector doméstico.
-                </p>
+          <div className="grid items-start lg:max-w-[1229px] lg:grid-cols-[minmax(0,492fr)_minmax(0,652fr)] lg:gap-[clamp(2rem,5.9vw,85px)]">
+            <PlaceholderMedia className="order-2 mx-auto aspect-[327/356] w-full max-w-[492px] rounded-lg border border-border bg-surface lg:order-none lg:mt-[5px] lg:aspect-[492/540] lg:rounded-xl" />
+            <div className="contents min-w-0 lg:block">
+              <div className="order-1 mb-10 lg:mb-0">
+                <h2 className="text-xl leading-[30px] font-semibold text-brand lg:text-[clamp(1.75rem,8vw,2rem)] lg:leading-[48px]">
+                  Quiénes somos
+                </h2>
+                <div className="mt-5 max-w-[618px] space-y-6 text-[15px] leading-6 lg:mt-7 lg:space-y-7 lg:text-xl lg:leading-7">
+                  <p>
+                    Desde hace más de una década trabajamos con un propósito
+                    claro: satisfacer las necesidades de nuestros clientes,
+                    ofreciendo productos de calidad y desarrollando nuestra
+                    actividad bajo sólidos principios de ética, compromiso y
+                    responsabilidad.
+                  </p>
+                  <p>
+                    ARGENPEL es una empresa dedicada al rebobinado y
+                    fraccionamiento de papel tissue, con una propuesta orientada
+                    tanto al mercado industrial como al sector doméstico.
+                  </p>
+                </div>
               </div>
 
-              <div className="mt-7">
+              <div className="order-3 mt-12 lg:mt-7">
                 <CompanySeparator />
                 {companyDetails.map((item) => (
                   <div key={item.title}>
-                    <article className="grid gap-4 px-0 pt-7 pb-[29px] sm:grid-cols-[minmax(0,238fr)_minmax(0,343fr)] sm:gap-6 lg:px-6">
-                      <h3 className="text-2xl leading-[31px] font-semibold text-brand">
+                    <article className="grid gap-2.5 px-0 py-[30px] lg:grid-cols-[minmax(0,238fr)_minmax(0,343fr)] lg:gap-6 lg:px-6 lg:pt-7 lg:pb-[29px]">
+                      <h3 className="text-xl leading-[26px] font-semibold text-brand lg:text-2xl lg:leading-[31px]">
                         {item.title}
                       </h3>
-                      <p className="text-sm leading-6">{item.description}</p>
+                      <p className="pl-12 text-[15px] leading-6 lg:pl-0 lg:text-sm">
+                        {item.description}
+                      </p>
                     </article>
                     <CompanySeparator />
                   </div>
                 ))}
-              </div>
 
-              <div className="mt-7 flex flex-wrap items-center gap-x-8 gap-y-5 lg:px-6">
-                <p className="text-2xl leading-[31px] font-semibold lg:translate-y-[3.5px]">
-                  Conocé a nuestro socio
-                </p>
-                <a
-                  href="https://www.argen-bols.com.ar/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-brand px-[31px] py-4 text-base leading-5 font-semibold tracking-[0.012em] text-surface transition-colors hover:bg-brand-dark focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-dark"
-                >
-                  Argenbols
-                </a>
+                <div className="mt-[47px] flex items-center justify-between gap-2 lg:mt-7 lg:flex-wrap lg:justify-start lg:gap-x-8 lg:gap-y-5 lg:px-6">
+                  <p className="text-base leading-6 font-semibold lg:translate-y-[3.5px] lg:text-2xl lg:leading-[31px]">
+                    Conocé a nuestro socio
+                  </p>
+                  <a
+                    href="https://www.argen-bols.com.ar/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex min-h-[52px] w-[129px] shrink-0 items-center justify-center rounded-full bg-brand px-5 py-4 text-base leading-5 font-semibold tracking-[0.012em] text-surface transition-colors hover:bg-brand-dark focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-dark lg:w-auto lg:px-[31px]"
+                  >
+                    Argenbols
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <SocialBanner titleClassName="-translate-y-[8.5px] leading-[31px]" />
-      <VisitBanner titleClassName="text-[clamp(1.5rem,7.5vw,2rem)] leading-[48px] font-semibold" />
+      <SocialBanner titleClassName="lg:-translate-y-[8.5px] lg:leading-[31px]" />
+      <VisitBanner titleClassName="lg:text-[clamp(1.5rem,7.5vw,2rem)] lg:leading-[48px] lg:font-semibold" />
     </main>
   );
 }

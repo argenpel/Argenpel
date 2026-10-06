@@ -47,7 +47,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
   };
 
   return (
-    <div className="group relative aspect-[500/349] min-w-0 overflow-hidden">
+    <div className="group relative aspect-[327/230] min-w-0 overflow-hidden lg:aspect-[500/349]">
       <div className="absolute inset-0">
         <Image
           alt={selectedImage.alt}

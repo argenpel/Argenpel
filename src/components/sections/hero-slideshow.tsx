@@ -83,34 +83,49 @@ export function HeroSlideshow({ images }: HeroSlideshowProps) {
   return (
     <div aria-hidden="true" className="absolute inset-0 isolate opacity-40">
       {(rotating ? images : images.slice(0, 1)).map((image, index) => (
-        <Image
-          alt=""
+        <div
           // The incoming image fades in above the outgoing one, which stays
           // opaque underneath so the crossfade never shows the background.
           className={cn(
-            "object-cover object-center",
+            image.mobileSrc
+              ? "absolute top-[8.46%] left-[-22.48%] h-[91.58%] w-[132.05%] lg:inset-0 lg:size-full"
+              : "absolute inset-0",
             index === slide.active
               ? "z-10 opacity-100 transition-opacity duration-[1200ms] ease-in-out"
               : index === slide.previous
                 ? "opacity-100"
                 : "opacity-0",
           )}
-          fetchPriority={index === 0 ? undefined : "low"}
-          fill
           key={image.src}
-          loading={index === 0 ? undefined : "eager"}
-          onLoad={() => {
-            loaded.current[index] = true;
-          }}
-          priority={index === 0}
-          sizes="100vw"
-          src={image.src}
-          style={
-            image.objectPosition
-              ? { objectPosition: image.objectPosition }
-              : undefined
-          }
-        />
+        >
+          <picture>
+            {image.mobileSrc && (
+              <source
+                media="(max-width: 1023px)"
+                srcSet={image.mobileSrc}
+                type="image/jpeg"
+              />
+            )}
+            <Image
+              alt=""
+              className="object-cover object-center"
+              fetchPriority={index === 0 ? undefined : "low"}
+              fill
+              loading={index === 0 ? undefined : "eager"}
+              onLoad={() => {
+                loaded.current[index] = true;
+              }}
+              priority={index === 0}
+              sizes="100vw"
+              src={image.src}
+              style={
+                image.objectPosition
+                  ? { objectPosition: image.objectPosition }
+                  : undefined
+              }
+            />
+          </picture>
+        </div>
       ))}
     </div>
   );
