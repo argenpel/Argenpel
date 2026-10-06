@@ -47,6 +47,6 @@ body {
 }
 
 .contact-field:-webkit-autofill {
-  box-shadow: inset 0 0 0 1000px var(--ap-neutral-white);
+  box-shadow: inset 0 0 0 1000px var(--ap-neutral-surface);
   -webkit-text-fill-color: var(--ap-neutral-ink);
 }

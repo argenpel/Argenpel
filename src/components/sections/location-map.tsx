@@ -18,7 +18,7 @@ export function LocationMap() {
         loading="lazy"
         referrerPolicy="strict-origin-when-cross-origin"
         src={companyLocation.embedUrl}
-        title={`Mapa de ubicación de ${companyLocation.name}`}
+        title={`Mapa de ubicación de ${companyLocation.name}: ${companyLocation.address}`}
       />
     </section>
   );
