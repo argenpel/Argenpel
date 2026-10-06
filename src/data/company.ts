@@ -9,6 +9,17 @@ export const companyLocation = {
 } as const;
 
 export const companyLinks = {
+  email: {
+    address: "ofertas@argen-pel.com.ar",
+    url: "mailto:ofertas@argen-pel.com.ar",
+  },
+  whatsapp: {
+    number: "+54 11 3468 2903",
+    url: "https://wa.me/5491134682903",
+  },
+  location: {
+    url: `https://www.google.com/maps/search/?api=1&query=${companyLocation.latitude},${companyLocation.longitude}`,
+  },
   catalog:
     "https://drive.google.com/file/d/1L4Qa29-MlqF6nlCG-Q5xqnvUORYnlf5G/view?usp=drive_link",
   instagram: {

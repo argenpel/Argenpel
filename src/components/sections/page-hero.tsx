@@ -11,7 +11,7 @@ type PageHeroProps = {
 
 export function PageHero({ active, imageSrc, label, title }: PageHeroProps) {
   return (
-    <section className="relative grid min-h-80 grid-rows-[auto_minmax(0,1fr)] overflow-hidden bg-placeholder text-center text-surface lg:min-h-72">
+    <section className="relative grid min-h-80 grid-rows-[auto_minmax(0,1fr)] bg-placeholder text-center text-surface lg:min-h-72">
       {imageSrc ? (
         <Image
           alt=""
