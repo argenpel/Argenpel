@@ -63,7 +63,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="flex min-h-[61px] items-start justify-between gap-2 pt-3 lg:min-h-[115px] lg:items-center lg:gap-8 lg:py-0 lg:pl-[15px]">
+        <div className="flex min-h-[61px] items-center justify-between gap-2 pt-3 lg:min-h-[115px] lg:gap-8 lg:py-0 lg:pl-[15px]">
           <p className="text-[9px] leading-[13.5px] text-border lg:text-sm lg:leading-6 lg:text-surface lg:opacity-70">
             © Argenpel ·{" "}
             <span className="block lg:inline">
@@ -72,20 +72,20 @@ export function SiteFooter() {
           </p>
           <a
             aria-label="Created by VNT Agencia: abrir Instagram en una nueva pestaña"
-            className="-mt-2 inline-flex min-h-11 shrink-0 items-center gap-[5px] rounded-sm text-border transition-colors hover:text-surface focus-visible:text-surface focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-surface lg:mt-0 lg:gap-[15px]"
+            className="group inline-flex min-h-11 shrink-0 items-center gap-2 rounded-sm text-border transition-colors hover:text-surface focus-visible:text-surface focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-surface md:gap-3"
             href="https://www.instagram.com/vnt.agencia/"
             rel="noopener noreferrer"
             target="_blank"
           >
             <span
-              className={`${hostGrotesk.className} text-[6.28px] leading-[normal] font-medium whitespace-nowrap lg:text-[18.232px]`}
+              className={`${hostGrotesk.className} text-[10px] leading-[1.4] font-medium tracking-[0.06em] whitespace-nowrap md:text-[11px]`}
               lang="en"
             >
               created by
             </span>
             <Image
               alt=""
-              className="h-[15.5px] w-auto max-w-none lg:h-[45px]"
+              className="h-5 w-auto max-w-none opacity-80 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100 md:h-7"
               height={588.62}
               src="/brand/vnt-signature-white.svg"
               unoptimized
