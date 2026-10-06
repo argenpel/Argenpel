@@ -81,7 +81,7 @@ export function HeroSlideshow({ images }: HeroSlideshowProps) {
   }, [rotating, images.length]);
 
   return (
-    <div aria-hidden="true" className="absolute inset-0 isolate">
+    <div aria-hidden="true" className="absolute inset-0 isolate opacity-40">
       {(rotating ? images : images.slice(0, 1)).map((image, index) => (
         <Image
           alt=""

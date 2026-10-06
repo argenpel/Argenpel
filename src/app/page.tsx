@@ -17,19 +17,19 @@ export const metadata = pageMetadata({ path: "/" });
 export default function HomePage() {
   return (
     <main>
-      <section className="relative grid min-h-[100svh] grid-rows-[auto_minmax(0,1fr)] overflow-hidden bg-placeholder text-center text-surface">
+      <section className="relative grid min-h-[100svh] grid-rows-[auto_minmax(0,1fr)] overflow-hidden bg-[#0e2021] text-center text-surface">
         <HeroSlideshow images={heroImages} />
         <SiteHeader active="home" />
-        <div className="relative z-10 flex min-h-0 items-center justify-center px-[var(--ap-page-gutter)] pt-4 pb-[clamp(2rem,calc(90svh-37rem),11.5rem)]">
-          <div className="flex flex-col items-center">
-            <h1 className="text-[clamp(1.75rem,9vw,4rem)] leading-none font-bold whitespace-nowrap">
-              Sabemos de papel
+        <div className="relative z-10 flex items-center justify-center px-[var(--ap-page-gutter)] py-12 lg:pt-[34px] lg:pb-0">
+          <div className="flex w-full max-w-[895px] flex-col items-center">
+            <h1 className="text-[clamp(1.25rem,5vw,2rem)] leading-normal font-semibold tracking-[-0.05px]">
+              Somos ARGENPEL, una empresa dedicada a la fabricación y desarrollo
+              de productos de papel&nbsp;tissue&nbsp;para la higiene
+              institucional, reconocida en el mercado por brindar excelente
+              relación precio-calidad.
             </h1>
-            <p className="mt-5 text-2xl font-semibold sm:text-4xl sm:leading-9">
-              VENTA POR MAYOR
-            </p>
             <Link
-              className="mt-[clamp(2.5rem,12svh,6rem)] inline-flex min-h-12 items-center justify-center rounded-full bg-brand px-9 text-base font-semibold tracking-[0.012em] transition-colors hover:bg-brand-dark focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-surface"
+              className="mt-8 inline-flex min-h-[45px] w-[196px] max-w-full items-center justify-center rounded-full bg-brand px-4 text-base leading-5 font-semibold tracking-[0.012em] transition-colors hover:bg-brand-dark focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-surface sm:mt-[57px]"
               href="/contacto"
             >
               CONTACTANOS
