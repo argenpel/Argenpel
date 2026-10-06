@@ -4,7 +4,7 @@ import Link from "next/link";
 import { HeaderContactLinks } from "@/components/layout/header-contact-links";
 import { Disclosure } from "@/components/ui/disclosure";
 import { categories } from "@/data/categories";
-import { companyLinks } from "@/data/company";
+import { companyContactLinks } from "@/data/company";
 import { navigation, type NavigationKey } from "@/data/navigation";
 import { cn } from "@/lib/utils";
 
@@ -14,29 +14,6 @@ type SiteHeaderProps = {
 
 const menuLinkClassName =
   "flex min-h-11 items-center rounded-md px-3 transition-colors hover:bg-brand-light hover:text-brand-dark focus-visible:outline-2 focus-visible:outline-brand";
-
-const headerContactLinks = [
-  {
-    key: "whatsapp",
-    label: "Contactar por WhatsApp",
-    href: companyLinks.whatsapp.url,
-  },
-  {
-    key: "instagram",
-    label: "Argenpel en Instagram",
-    href: companyLinks.instagram.url,
-  },
-  {
-    key: "email",
-    label: "Enviar correo a Argenpel",
-    href: companyLinks.email.url,
-  },
-  {
-    key: "location",
-    label: "Ver ubicación en Google Maps",
-    href: companyLinks.location.url,
-  },
-] as const;
 
 const navigationStyles = {
   mobile: {
@@ -155,7 +132,7 @@ export function SiteHeader({ active }: SiteHeaderProps) {
             className="absolute top-[calc(100%+0.5rem)] right-0 max-h-[calc(100svh-6rem)] w-52 overflow-y-auto rounded-lg bg-surface p-2 text-ink shadow-lg"
           >
             <NavigationList active={active} variant="mobile" />
-            <HeaderContactLinks links={headerContactLinks} variant="mobile" />
+            <HeaderContactLinks links={companyContactLinks} variant="mobile" />
           </nav>
         </Disclosure>
 
@@ -164,7 +141,7 @@ export function SiteHeader({ active }: SiteHeaderProps) {
           className="hidden items-center gap-[11px] lg:flex"
         >
           <NavigationList active={active} variant="desktop" />
-          <HeaderContactLinks links={headerContactLinks} variant="desktop" />
+          <HeaderContactLinks links={companyContactLinks} variant="desktop" />
         </nav>
       </div>
     </header>

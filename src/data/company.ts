@@ -29,3 +29,26 @@ export const companyLinks = {
     url: "https://www.instagram.com/argenpel/?hl=es",
   },
 } as const;
+
+export const companyContactLinks = [
+  {
+    key: "whatsapp",
+    label: "Contactar por WhatsApp",
+    href: companyLinks.whatsapp.url,
+  },
+  {
+    key: "instagram",
+    label: "Argenpel en Instagram",
+    href: companyLinks.instagram.url,
+  },
+  {
+    key: "email",
+    label: "Enviar correo a Argenpel",
+    href: companyLinks.email.url,
+  },
+  {
+    key: "location",
+    label: "Ver ubicación en Google Maps",
+    href: companyLinks.location.url,
+  },
+] as const;

@@ -20,7 +20,7 @@ export function HeaderContactLinks({
   variant,
 }: {
   links: readonly ContactLink[];
-  variant: "mobile" | "desktop";
+  variant: "mobile" | "desktop" | "footer";
 }) {
   return (
     <ul
@@ -29,7 +29,9 @@ export function HeaderContactLinks({
         "flex items-center",
         variant === "mobile"
           ? "mt-2 justify-between border-t border-border pt-3"
-          : "-mr-1.5 gap-0.5",
+          : variant === "footer"
+            ? "gap-0 lg:gap-0.5"
+            : "-mr-1.5 gap-0.5",
       )}
     >
       {links.map(({ key, label, href }) => (
@@ -40,7 +42,9 @@ export function HeaderContactLinks({
               "flex h-11 items-center justify-center rounded-md transition-colors focus-visible:outline-2 focus-visible:outline-offset-2",
               variant === "mobile"
                 ? "w-11 bg-brand hover:bg-brand-dark focus-visible:outline-brand-dark"
-                : "w-8 hover:bg-brand/30 focus-visible:outline-surface",
+                : variant === "footer"
+                  ? "w-11 hover:bg-brand/30 focus-visible:outline-surface lg:w-8"
+                  : "w-8 hover:bg-brand/30 focus-visible:outline-surface",
             )}
             href={href}
           >
@@ -48,10 +52,8 @@ export function HeaderContactLinks({
               aria-hidden="true"
               className={cn(
                 "flex items-center justify-center",
-                variant === "desktop" &&
-                  key === "whatsapp" &&
-                  "translate-x-0.5",
-                variant === "desktop" &&
+                variant !== "mobile" && key === "whatsapp" && "translate-x-0.5",
+                variant !== "mobile" &&
                   key === "email" &&
                   "translate-x-px translate-y-[0.5px]",
                 key === "whatsapp" &&
