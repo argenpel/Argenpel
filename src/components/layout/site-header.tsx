@@ -122,19 +122,11 @@ export function SiteHeader({ active }: SiteHeaderProps) {
             />
             <Image
               alt="Papelera Argenpel"
-              className={cn(
-                "object-contain",
-                active === "home" &&
-                  "lg:top-[3.29px]! lg:h-[80.402px]! lg:object-fill",
-              )}
+              className="object-contain"
               fill
               loading="eager"
               sizes="(min-width: 1024px) 279px, 163px"
-              src={
-                active === "home"
-                  ? "/brand/argenpel-home-logo.svg"
-                  : "/brand/argenpel-logo.svg"
-              }
+              src="/brand/argenpel-logo.svg"
             />
           </picture>
         </Link>
