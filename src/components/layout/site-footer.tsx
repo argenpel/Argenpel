@@ -3,6 +3,8 @@ import Link from "next/link";
 import localFont from "next/font/local";
 
 import { HeaderContactLinks } from "@/components/layout/header-contact-links";
+import { Disclosure } from "@/components/ui/disclosure";
+import { categories } from "@/data/categories";
 import { companyContactLinks } from "@/data/company";
 import { navigation } from "@/data/navigation";
 
@@ -42,17 +44,49 @@ export function SiteFooter() {
 
           <nav
             aria-label="Navegación del pie"
-            className="mt-[25px] w-full border-t border-border/40 lg:mt-0 lg:translate-y-[0.5px] lg:border-0"
+            className="relative mt-[25px] w-full border-t border-border/40 lg:mt-0 lg:translate-y-[0.5px] lg:border-0"
           >
             <ul className="flex flex-wrap justify-between gap-y-1 text-xs leading-[18px] lg:grid lg:grid-cols-[169fr_197fr_189fr_73fr] lg:gap-0 lg:pr-1 lg:text-base lg:leading-5 lg:font-semibold lg:tracking-[0.012em]">
               {navigation.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    className="flex min-h-11 items-center justify-center rounded-sm hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-surface lg:w-fit lg:justify-start"
-                    href={item.href}
-                  >
-                    {item.label}
-                  </Link>
+                <li className="lg:relative" key={item.key}>
+                  {item.key === "products" ? (
+                    <Disclosure className="group/products">
+                      <summary className="flex min-h-11 cursor-pointer list-none items-center justify-center gap-1 rounded-sm hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-surface lg:w-fit lg:justify-start lg:gap-2 [&::-webkit-details-marker]:hidden">
+                        {item.label}
+                        <svg
+                          aria-hidden="true"
+                          className="size-3 shrink-0 transition-transform group-open/products:rotate-180"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth={2}
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="m6 15 6-6 6 6" />
+                        </svg>
+                      </summary>
+                      <ul className="absolute bottom-full left-0 z-30 mb-2 grid w-full rounded-lg bg-surface p-2 text-sm leading-5 font-semibold text-ink shadow-lg lg:left-1/2 lg:w-60 lg:-translate-x-1/2">
+                        {categories.map((category) => (
+                          <li key={category.id}>
+                            <Link
+                              className="flex min-h-11 items-center rounded-md px-3 transition-colors hover:bg-brand-light hover:text-brand-dark focus-visible:outline-2 focus-visible:outline-brand"
+                              href={`/productos/${category.slug}`}
+                            >
+                              {category.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </Disclosure>
+                  ) : (
+                    <Link
+                      className="flex min-h-11 items-center justify-center rounded-sm hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-surface lg:w-fit lg:justify-start"
+                      href={item.href}
+                    >
+                      {item.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
