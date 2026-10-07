@@ -74,8 +74,8 @@ export default function ContactPage() {
         contentClassName="lg:pb-[75px]"
       />
 
-      <section className="grid grid-cols-[minmax(0,1fr)] lg:min-h-[631px] lg:grid-cols-[minmax(320px,510px)_minmax(0,1fr)]">
-        <div className="order-1 min-w-0 bg-[#e8edee] bg-linear-to-r from-border/35 to-border/35 lg:order-2 lg:bg-transparent lg:bg-none lg:px-[var(--ap-page-gutter)] lg:py-7 lg:pr-8 lg:pl-[clamp(2rem,9.65vw,8.6875rem)]">
+      <section className="grid grid-cols-[minmax(0,1fr)] lg:mx-auto lg:min-h-[631px] lg:w-[calc(100%-2*var(--ap-page-gutter))] lg:max-w-[1259px] lg:grid-cols-[minmax(280px,510fr)_minmax(0,665fr)] lg:gap-x-[clamp(2rem,5.84vw,5.25rem)]">
+        <div className="order-1 min-w-0 bg-[#e8edee] bg-linear-to-r from-border/35 to-border/35 lg:order-2 lg:bg-transparent lg:bg-none lg:py-7">
           <form className="mx-auto w-full max-w-[665px] min-w-0 px-6 pt-[34px] pb-[45px] lg:mx-0 lg:min-h-[575px] lg:bg-border/35 lg:pt-[39px] lg:pr-[79px] lg:pb-[38px] lg:pl-[65px]">
             <h2 className="min-h-[90px] max-w-[535px] text-xl leading-[30px] font-semibold lg:min-h-0 lg:w-[calc(100%+14px)] lg:text-2xl lg:leading-[31px]">
               Contanos qué necesitás y te responderemos a la brevedad.
@@ -132,7 +132,7 @@ export default function ContactPage() {
           </form>
         </div>
 
-        <aside className="order-2 min-h-[168px] min-w-0 bg-brand px-6 pt-9 pb-10 text-surface lg:order-1 lg:px-[clamp(3.5rem,6.3vw,5.6875rem)] lg:py-12">
+        <aside className="order-2 min-h-[168px] min-w-0 bg-brand px-6 pt-9 pb-10 text-surface lg:relative lg:isolate lg:order-1 lg:py-12 lg:pr-8 lg:pl-[15px] lg:before:absolute lg:before:inset-y-0 lg:before:right-0 lg:before:-z-10 lg:before:w-screen lg:before:bg-brand">
           <h2 className="text-center text-xl leading-[30px] font-semibold lg:max-w-[313px] lg:text-left lg:text-2xl lg:leading-[31px]">
             Nuestros canales de contacto
           </h2>
