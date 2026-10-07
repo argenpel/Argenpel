@@ -17,16 +17,16 @@ export default function HomePage() {
       <section className="relative grid h-[calc(100svh-91px)] min-h-[721px] grid-rows-[auto_minmax(0,1fr)] overflow-hidden bg-ink text-center text-surface lg:h-auto lg:min-h-[100svh] lg:bg-[#0e2021]">
         <HeroSlideshow images={heroImages} />
         <SiteHeader active="home" />
-        <div className="relative z-10 flex items-stretch justify-center px-6 pt-[168px] pb-[53px] lg:items-center lg:px-[var(--ap-page-gutter)] lg:pt-[34px] lg:pb-0">
-          <div className="flex w-full max-w-[895px] flex-col items-center justify-between lg:justify-start">
-            <h1 className="max-w-[283px] text-[18px] leading-7 font-semibold tracking-normal lg:max-w-none lg:text-[clamp(1.25rem,5vw,2rem)] lg:leading-normal lg:tracking-[-0.05px]">
+        <div className="relative z-10 flex items-stretch justify-center px-6 pt-[168px] pb-[53px] lg:px-[var(--ap-page-gutter)] lg:pt-0 lg:pb-0">
+          <div className="flex w-full max-w-[895px] flex-col items-center justify-between lg:grid lg:grid-rows-[minmax(min-content,2fr)_auto_minmax(0,1fr)]">
+            <h1 className="max-w-[283px] text-[18px] leading-7 font-semibold tracking-normal lg:max-w-none lg:self-center lg:text-[clamp(1.25rem,5vw,2rem)] lg:leading-normal lg:tracking-[-0.05px]">
               Somos ARGENPEL, una empresa dedicada a la fabricación y desarrollo
               de productos de papel&nbsp;tissue&nbsp;para la higiene
               institucional, reconocida en el mercado por brindar excelente
               relación precio-calidad.
             </h1>
             <Link
-              className="mt-12 inline-flex min-h-12 w-full max-w-full items-center justify-center rounded-full bg-brand px-4 text-sm leading-5 font-medium tracking-normal transition-colors hover:bg-brand-dark focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-surface lg:mt-[57px] lg:min-h-[45px] lg:w-[196px] lg:text-base lg:font-semibold lg:tracking-[0.012em]"
+              className="mt-12 inline-flex min-h-12 w-full max-w-full items-center justify-center rounded-full bg-brand px-4 text-sm leading-5 font-medium tracking-normal transition-colors hover:bg-brand-dark focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-surface lg:mt-0 lg:min-h-[45px] lg:w-[196px] lg:justify-self-center lg:text-base lg:font-semibold lg:tracking-[0.012em]"
               href="/contacto"
             >
               CONTACTANOS
