@@ -19,7 +19,6 @@ export function MobileNavigation({ active }: { active?: NavigationKey }) {
   const id = useId();
   const dialogRef = useRef<HTMLDialogElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
-  const closeRef = useRef<HTMLButtonElement>(null);
   const previousOverflow = useRef<string | null>(null);
   const [open, setOpen] = useState(false);
 
@@ -53,7 +52,7 @@ export function MobileNavigation({ active }: { active?: NavigationKey }) {
     document.body.style.overflow = "hidden";
     dialogRef.current?.showModal();
     setOpen(true);
-    closeRef.current?.focus();
+    dialogRef.current?.focus({ preventScroll: true });
   };
 
   return (
@@ -80,6 +79,7 @@ export function MobileNavigation({ active }: { active?: NavigationKey }) {
       <dialog
         ref={dialogRef}
         id={id}
+        tabIndex={-1}
         aria-label="Menú principal"
         className="fixed inset-0 m-0 h-dvh max-h-none w-full max-w-none flex-col overflow-hidden border-0 bg-brand p-0 text-left text-surface backdrop:bg-brand open:flex"
         onClose={() => {
@@ -104,7 +104,6 @@ export function MobileNavigation({ active }: { active?: NavigationKey }) {
             />
           </Link>
           <button
-            ref={closeRef}
             type="button"
             aria-label="Cerrar menú"
             onClick={close}
