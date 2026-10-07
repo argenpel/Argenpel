@@ -63,7 +63,7 @@ export function SiteFooter() {
                           strokeLinecap="round"
                           strokeLinejoin="round"
                         >
-                          <path d="m6 15 6-6 6 6" />
+                          <path d="m6 9 6 6 6-6" />
                         </svg>
                       </summary>
                       <ul className="absolute bottom-full left-0 z-30 mb-2 grid w-full rounded-lg bg-surface p-2 text-sm leading-5 font-semibold text-ink shadow-lg lg:left-1/2 lg:w-60 lg:-translate-x-1/2">
