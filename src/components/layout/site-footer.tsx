@@ -44,7 +44,7 @@ export function SiteFooter() {
             aria-label="Navegación del pie"
             className="mt-[25px] w-full border-t border-border/40 lg:mt-0 lg:translate-y-[0.5px] lg:border-0"
           >
-            <ul className="flex justify-between text-xs leading-[18px] lg:grid lg:grid-cols-[169fr_197fr_189fr_73fr] lg:gap-0 lg:pr-1 lg:text-base lg:leading-5 lg:font-semibold lg:tracking-[0.012em]">
+            <ul className="flex flex-wrap justify-between gap-y-1 text-xs leading-[18px] lg:grid lg:grid-cols-[169fr_197fr_189fr_73fr] lg:gap-0 lg:pr-1 lg:text-base lg:leading-5 lg:font-semibold lg:tracking-[0.012em]">
               {navigation.map((item) => (
                 <li key={item.href}>
                   <Link
@@ -63,8 +63,8 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="flex min-h-[61px] items-center justify-between gap-2 pt-3 lg:min-h-[115px] lg:gap-8 lg:py-0 lg:pl-[15px]">
-          <p className="text-[9px] leading-[13.5px] text-border lg:text-sm lg:leading-6 lg:text-surface lg:opacity-70">
+        <div className="flex min-h-[61px] flex-wrap items-center justify-between gap-2 pt-3 lg:min-h-[115px] lg:gap-8 lg:py-0 lg:pl-[15px]">
+          <p className="flex-1 text-[9px] leading-[13.5px] text-border lg:text-sm lg:leading-6 lg:text-surface lg:opacity-70">
             © Argenpel ·{" "}
             <span className="block lg:inline">
               Placeholder de datos legales
@@ -72,7 +72,7 @@ export function SiteFooter() {
           </p>
           <a
             aria-label="Created by VNT Agencia: abrir Instagram en una nueva pestaña"
-            className="group inline-flex min-h-11 shrink-0 items-center gap-2 rounded-sm text-border transition-colors hover:text-surface focus-visible:text-surface focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-surface md:gap-3"
+            className="group ml-auto inline-flex min-h-11 shrink-0 items-center gap-2 rounded-sm text-border transition-colors hover:text-surface focus-visible:text-surface focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-surface md:gap-3"
             href="https://www.instagram.com/vnt.agencia/"
             rel="noopener noreferrer"
             target="_blank"
