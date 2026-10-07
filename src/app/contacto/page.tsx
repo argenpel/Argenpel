@@ -229,9 +229,7 @@ export default function ContactPage() {
           San Martín, Buenos Aires
         </a>
       </section>
-      <div className="hidden lg:block">
-        <LocationMap />
-      </div>
+      <LocationMap />
       <VisitBanner />
     </main>
   );
