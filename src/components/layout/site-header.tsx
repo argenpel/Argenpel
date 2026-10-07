@@ -40,14 +40,16 @@ const navigationStyles = {
 
 function ChevronIcon({ className }: { className: string }) {
   return (
-    <Image
-      alt=""
+    <svg
+      aria-hidden="true"
       className={className}
       height={11.0459}
-      src="/icons/header-chevron.svg"
-      unoptimized
+      viewBox="0 0 6.27297 11.0459"
       width={6.27297}
-    />
+      fill="currentColor"
+    >
+      <path d="M6.0533 6.0533C6.34619 5.76041 6.34619 5.28553 6.0533 4.99264L1.28033 0.21967C0.987437 -0.0732231 0.512564 -0.0732231 0.21967 0.21967C-0.0732231 0.512564 -0.0732231 0.987437 0.21967 1.28033L4.46231 5.52297L0.21967 9.76561C-0.0732231 10.0585 -0.0732231 10.5334 0.21967 10.8263C0.512564 11.1192 0.987437 11.1192 1.28033 10.8263L6.0533 6.0533ZM4.52297 5.52297V6.27297H5.52297V5.52297V4.77297H4.52297V5.52297Z" />
+    </svg>
   );
 }
 
@@ -71,7 +73,7 @@ function NavigationList({
               >
                 {item.label}
                 <span className="flex w-[10.273px] shrink-0 items-center">
-                  <ChevronIcon className="rotate-90 brightness-0 transition-transform group-open/products:-rotate-90 lg:brightness-100" />
+                  <ChevronIcon className="rotate-90 transition-transform group-open/products:-rotate-90" />
                 </span>
               </summary>
               <ul className={styles.submenu}>
