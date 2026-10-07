@@ -59,7 +59,7 @@ export default function CompanyPage() {
       <section className="px-6 pt-10 pb-[45px] lg:min-h-[1313px] lg:px-10 lg:pt-[112px] lg:pb-[148px]">
         <div className="mx-auto max-w-[1260px]">
           <div className="grid items-start lg:max-w-[1229px] lg:grid-cols-[minmax(0,492fr)_minmax(0,652fr)] lg:gap-[clamp(2rem,5.9vw,85px)]">
-            <PlaceholderMedia className="order-2 mx-auto aspect-[327/356] w-full max-w-[492px] rounded-lg border border-border bg-surface lg:order-none lg:mt-[5px] lg:aspect-[492/540] lg:rounded-xl" />
+            <PlaceholderMedia className="order-2 mx-auto aspect-[327/356] w-full max-w-[492px] rounded-lg border border-border bg-surface lg:sticky lg:top-8 lg:order-none lg:mt-[5px] lg:aspect-[492/540] lg:max-w-[min(492px,calc((100svh-64px)*492/540))] lg:rounded-xl" />
             <div className="contents min-w-0 lg:block">
               <div className="order-1 mb-10 lg:mb-0">
                 <h2 className="text-xl leading-[30px] font-semibold text-brand lg:text-[clamp(1.75rem,8vw,2rem)] lg:leading-[48px]">
