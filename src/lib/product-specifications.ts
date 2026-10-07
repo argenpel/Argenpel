@@ -6,8 +6,9 @@ const slashList = (values: string[]) => values.join(" / ");
 const lowerFirst = (value: string) =>
   `${value.charAt(0).toLocaleLowerCase("es-AR")}${value.slice(1)}`;
 
-// Weights keep the notation written in the data, with a decimal comma.
-const formatWeight = (value: string) => value.replace(".", ",");
+// Catalog weights preserve their notation; compact weights omit trailing zeros.
+const formatWeight = (value: string, compact: boolean) =>
+  compact ? number.format(Number(value)) : value.replace(".", ",");
 
 const coreSizeLabels: Record<
   NonNullable<Product["coreSizes"]>[number],
@@ -50,6 +51,7 @@ function getOptions(product: Product): ProductSpecification | undefined {
 
 export function getProductSpecifications(
   product: Product,
+  { compactWeights = false }: { compactWeights?: boolean } = {},
 ): ProductSpecification[] {
   const quality: ProductSpecification = {
     label: "Calidad",
@@ -84,7 +86,7 @@ export function getProductSpecifications(
     product.packWeightsKg?.length
       ? {
           label: "Peso por pack",
-          value: `${slashList(product.packWeightsKg.map(formatWeight))} kg${product.customPackWeight ? " o a medida" : ""}`,
+          value: `${slashList(product.packWeightsKg.map((weight) => formatWeight(weight, compactWeights)))} kg${product.customPackWeight ? " o a medida" : ""}`,
         }
       : undefined,
     getOptions(product),

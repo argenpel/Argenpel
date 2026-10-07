@@ -9,7 +9,7 @@ type BannerProps = {
 
 export function SocialBanner({ titleClassName }: BannerProps = {}) {
   return (
-    <section className="flex min-h-36 items-center justify-center bg-[#e8edee] px-6 text-center lg:min-h-[198px] lg:bg-surface lg:bg-linear-to-r lg:from-border/35 lg:to-border/35">
+    <section className="hidden min-h-36 items-center justify-center bg-[#e8edee] px-6 text-center lg:flex lg:min-h-[198px] lg:bg-surface lg:bg-linear-to-r lg:from-border/35 lg:to-border/35">
       <h2
         className={cn(
           "-translate-y-px text-base leading-7 font-semibold text-brand lg:translate-y-0 lg:text-[clamp(1.25rem,6.5vw,1.5rem)] lg:leading-[46px] lg:whitespace-nowrap lg:text-brand-dark",
@@ -45,14 +45,24 @@ export function VisitBanner({ titleClassName }: BannerProps = {}) {
           className="top-[-103.09%]! left-[-17.16%]! h-[273.11%]! w-[120.17%]! max-w-none opacity-48 lg:top-0! lg:left-0! lg:h-full! lg:w-full! lg:object-cover lg:object-center lg:opacity-100"
         />
       </picture>
-      <h2
-        className={cn(
-          "relative z-10 -translate-y-px text-base leading-7 font-semibold lg:translate-y-0 lg:text-[clamp(1.5rem,7.5vw,2.5rem)] lg:leading-tight lg:font-bold lg:whitespace-nowrap",
-          titleClassName,
-        )}
-      >
-        Gracias por visitarnos
-      </h2>
+      <div className="relative z-10 translate-y-px lg:translate-y-0">
+        <h2
+          className={cn(
+            "text-base leading-7 font-semibold lg:text-[clamp(1.5rem,7.5vw,2.5rem)] lg:leading-tight lg:font-bold lg:whitespace-nowrap",
+            titleClassName,
+          )}
+        >
+          Gracias por visitarnos
+        </h2>
+        <a
+          className="block text-sm leading-5 font-medium hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-surface lg:hidden"
+          href={companyLinks.instagram.url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Seguinos en @{companyLinks.instagram.handle}
+        </a>
+      </div>
     </section>
   );
 }

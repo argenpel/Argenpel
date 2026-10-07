@@ -53,7 +53,7 @@ export function PageHero({
       <SiteHeader active={active} />
       <div
         className={cn(
-          "relative z-10 flex min-h-0 items-end justify-center px-6 pb-[60px] lg:px-[var(--ap-page-gutter)] lg:pb-[62px]",
+          "relative z-10 flex min-h-0 items-end justify-center px-6 pb-[54px] lg:px-[var(--ap-page-gutter)] lg:pb-[62px]",
           contentClassName,
         )}
       >
@@ -65,7 +65,7 @@ export function PageHero({
           ) : null}
           <h1
             className={cn(
-              "text-xl leading-[30px] font-semibold lg:text-[clamp(1.75rem,8vw,2.5rem)] lg:leading-tight lg:font-bold lg:whitespace-nowrap",
+              "text-2xl leading-9 font-semibold lg:text-[clamp(1.75rem,8vw,2.5rem)] lg:leading-tight lg:font-bold lg:whitespace-nowrap",
               titleClassName,
             )}
           >

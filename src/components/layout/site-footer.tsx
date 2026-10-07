@@ -58,7 +58,7 @@ export function SiteFooter() {
             </ul>
           </nav>
 
-          <div className="-mt-[3px] flex -translate-x-2 justify-center lg:mt-0 lg:block lg:translate-x-0 lg:translate-y-[1.5px]">
+          <div className="-mt-[3px] flex justify-center lg:mt-0 lg:block lg:translate-y-[1.5px]">
             <HeaderContactLinks links={companyContactLinks} variant="footer" />
           </div>
         </div>

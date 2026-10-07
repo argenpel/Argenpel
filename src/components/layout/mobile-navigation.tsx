@@ -135,11 +135,23 @@ export function MobileNavigation({ active }: { active?: NavigationKey }) {
                 className="border-b border-surface/28 pb-[5px]"
               >
                 {item.key === "products" ? (
-                  <Disclosure>
+                  <Disclosure className="group">
                     <summary
-                      className={`${linkClassName} cursor-pointer list-none [&::-webkit-details-marker]:hidden`}
+                      className={`${linkClassName} relative cursor-pointer list-none [&::-webkit-details-marker]:hidden`}
                     >
                       {item.label}
+                      <span
+                        aria-hidden="true"
+                        className="absolute top-[25.5px] right-3 rotate-90 transition-transform group-open:-rotate-90"
+                      >
+                        <Image
+                          alt=""
+                          height={14.7279}
+                          width={8.36396}
+                          src="/icons/mobile-products-chevron.svg"
+                          unoptimized
+                        />
+                      </span>
                     </summary>
                     <ul className="grid pb-3 pl-4 text-lg leading-6">
                       {categories.map((category) => (

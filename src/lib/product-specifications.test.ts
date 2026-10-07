@@ -81,4 +81,33 @@ describe("getProductSpecifications", () => {
       "Opciones: con/sin precorte · alto: 21 o 24 cm",
     ]);
   });
+
+  it("compacts mobile weights without changing other specifications", () => {
+    const expectedWeights: Record<string, string> = {
+      "institutional-toilet-paper-eco": "2 / 2,2 / 2,3 / 2,4 kg o a medida",
+      "institutional-toilet-paper-premium": "2,2 / 2,3 / 2,4 kg o a medida",
+      "family-toilet-paper-30": "2,5 / 3 kg o a medida",
+      "family-toilet-paper-12-handle": "2,4 kg o a medida",
+      "roll-towel": "1,8 / 2,1 / 3 kg o a medida",
+      "industrial-double-ply-roll": "2,8 / 3,4 kg o a medida",
+    };
+
+    for (const product of products) {
+      const catalog = getProductSpecifications(product);
+      const compact = getProductSpecifications(product, {
+        compactWeights: true,
+      });
+
+      expect(compact.map(({ label }) => label)).toEqual(
+        catalog.map(({ label }) => label),
+      );
+      expect(compact.filter(({ label }) => label !== "Peso por pack")).toEqual(
+        catalog.filter(({ label }) => label !== "Peso por pack"),
+      );
+
+      expect(
+        compact.find(({ label }) => label === "Peso por pack")?.value,
+      ).toBe(expectedWeights[product.id]);
+    }
+  });
 });

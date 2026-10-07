@@ -29,7 +29,7 @@ export default function HomePage() {
               relación precio-calidad.
             </h1>
             <Link
-              className="mt-12 inline-flex min-h-12 w-full max-w-full items-center justify-center rounded-full bg-brand px-4 text-sm leading-5 font-semibold tracking-normal transition-colors hover:bg-brand-dark focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-surface lg:mt-[57px] lg:min-h-[45px] lg:w-[196px] lg:text-base lg:tracking-[0.012em]"
+              className="mt-12 inline-flex min-h-12 w-full max-w-full items-center justify-center rounded-full bg-brand px-4 text-sm leading-5 font-medium tracking-normal transition-colors hover:bg-brand-dark focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-surface lg:mt-[57px] lg:min-h-[45px] lg:w-[196px] lg:text-base lg:font-semibold lg:tracking-[0.012em]"
               href="/contacto"
             >
               CONTACTANOS
@@ -40,7 +40,7 @@ export default function HomePage() {
 
       <section className="bg-surface px-6 pt-[46px] pb-[110px] lg:pt-[88px] lg:pb-[81px]">
         <div className="mx-auto max-w-[1240px] text-center">
-          <h2 className="text-left text-xl leading-[30px] font-semibold lg:text-center lg:text-[clamp(1.75rem,8vw,2rem)] lg:leading-[48px] lg:font-medium lg:whitespace-nowrap">
+          <h2 className="text-xl leading-[30px] font-semibold lg:text-[clamp(1.75rem,8vw,2rem)] lg:leading-[48px] lg:font-medium lg:whitespace-nowrap">
             Nuestros productos
           </h2>
 
@@ -86,7 +86,7 @@ export default function HomePage() {
             href={companyLinks.catalog}
             target="_blank"
             rel="noreferrer"
-            className="mt-[67px] inline-flex min-h-12 w-full max-w-full items-center justify-center rounded-full border border-brand px-4 text-sm leading-5 font-semibold tracking-normal text-brand lg:mt-[54px] lg:min-h-[45px] lg:w-[331px] lg:border-border lg:text-base lg:leading-normal lg:tracking-[0.012em] lg:text-brand-dark"
+            className="mt-[67px] inline-flex min-h-12 w-full max-w-full items-center justify-center rounded-full border border-brand px-4 text-sm leading-5 font-medium tracking-normal text-brand lg:mt-[54px] lg:min-h-[45px] lg:w-[331px] lg:border-border lg:text-base lg:leading-normal lg:font-semibold lg:tracking-[0.012em] lg:text-brand-dark"
           >
             DESCARGÁ NUESTRO CATÁLOGO
           </a>

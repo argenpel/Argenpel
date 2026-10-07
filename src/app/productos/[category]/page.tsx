@@ -53,11 +53,14 @@ function ProductCard({
   reverse: boolean;
 }) {
   const specifications = getProductSpecifications(product);
+  const mobileSpecifications = getProductSpecifications(product, {
+    compactWeights: true,
+  });
 
   return (
     <article
       id={product.slug}
-      className="grid items-start gap-[35px] pb-[30px] min-[1024px]:items-center min-[1024px]:gap-8 min-[1024px]:py-9 min-[1330px]:min-h-[423px] min-[1330px]:grid-cols-[500px_500px] min-[1330px]:gap-[120px] min-[1330px]:px-[65px] min-[1330px]:py-[37px]"
+      className="grid items-start gap-6 min-[1024px]:items-center min-[1024px]:gap-8 min-[1024px]:py-9 min-[1330px]:min-h-[423px] min-[1330px]:grid-cols-[500px_500px] min-[1330px]:gap-[120px] min-[1330px]:px-[65px] min-[1330px]:py-[37px]"
     >
       {product.images.length > 0 && (
         <div
@@ -83,22 +86,38 @@ function ProductCard({
         </h2>
         <dl
           className={cn(
-            "mt-[27px] max-w-[480px] min-[1024px]:mt-[15px]",
+            "max-w-[480px] min-[1024px]:mt-[15px]",
             product.titleLines === 2 && "min-[1330px]:mt-[25px]",
           )}
         >
-          {specifications.map((specification) => (
+          {specifications.map((specification, index) => (
             <div
-              className="min-h-[57px] border-b border-border py-[7px] text-sm leading-5 font-semibold min-[1024px]:min-h-0 min-[1024px]:pt-[13px] min-[1024px]:pb-[10px] min-[1024px]:text-base min-[1024px]:tracking-[0.012em] min-[1024px]:first:pt-0 min-[1024px]:first:pb-[9px]"
+              className="min-h-[33px] border-b border-border py-[6px] text-sm leading-5 font-medium min-[1024px]:min-h-0 min-[1024px]:pt-[13px] min-[1024px]:pb-[10px] min-[1024px]:text-base min-[1024px]:font-semibold min-[1024px]:tracking-[0.012em] min-[1024px]:first:pt-0 min-[1024px]:first:pb-[9px]"
               key={specification.label}
             >
               <dt className="inline">
-                <span aria-hidden="true" className="mr-1">
+                <span
+                  aria-hidden="true"
+                  className="mr-1 hidden min-[1024px]:inline"
+                >
                   ›
                 </span>
                 {specification.label}:{" "}
               </dt>
-              <dd className="inline">{specification.value}</dd>
+              <dd className="inline">
+                {mobileSpecifications[index].value === specification.value ? (
+                  specification.value
+                ) : (
+                  <>
+                    <span className="min-[1024px]:hidden">
+                      {mobileSpecifications[index].value}
+                    </span>
+                    <span className="hidden min-[1024px]:inline">
+                      {specification.value}
+                    </span>
+                  </>
+                )}
+              </dd>
             </div>
           ))}
         </dl>
@@ -128,8 +147,8 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         title={category.name}
       />
 
-      <section className="px-6 pt-9 pb-10 min-[1024px]:px-10 min-[1024px]:py-2">
-        <div className="mx-auto grid max-w-[1250px] gap-11 min-[1024px]:block">
+      <section className="px-6 py-[47px] min-[1024px]:px-10 min-[1024px]:py-2">
+        <div className="mx-auto grid max-w-[1250px] gap-[47px] min-[1024px]:block">
           {categoryProducts.map((product, index) => (
             <ProductCard
               key={product.id}

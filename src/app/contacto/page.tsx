@@ -85,7 +85,7 @@ export default function ContactPage() {
             </h2>
 
             <div className="mt-[26px] grid gap-[25px] lg:mt-[59px] lg:gap-8">
-              <label className="grid gap-[7px] text-sm leading-5 font-semibold lg:gap-1.5 lg:text-base lg:tracking-[0.012em]">
+              <label className="grid gap-[7px] text-sm leading-5 font-medium lg:gap-1.5 lg:text-base lg:font-semibold lg:tracking-[0.012em]">
                 Nombre y empresa
                 <input
                   autoComplete="name"
@@ -94,7 +94,7 @@ export default function ContactPage() {
                   type="text"
                 />
               </label>
-              <label className="grid gap-[7px] text-sm leading-5 font-semibold lg:gap-1.5 lg:text-base lg:tracking-[0.012em]">
+              <label className="grid gap-[7px] text-sm leading-5 font-medium lg:gap-1.5 lg:text-base lg:font-semibold lg:tracking-[0.012em]">
                 Email
                 <input
                   autoComplete="email"
@@ -103,7 +103,7 @@ export default function ContactPage() {
                   type="email"
                 />
               </label>
-              <label className="grid gap-[7px] text-sm leading-5 font-semibold lg:gap-1.5 lg:text-base lg:tracking-[0.012em]">
+              <label className="grid gap-[7px] text-sm leading-5 font-medium lg:gap-1.5 lg:text-base lg:font-semibold lg:tracking-[0.012em]">
                 Teléfono
                 <input
                   autoComplete="tel"
@@ -112,7 +112,7 @@ export default function ContactPage() {
                   type="tel"
                 />
               </label>
-              <label className="grid gap-[7px] text-sm leading-5 font-semibold lg:gap-1.5 lg:text-base lg:tracking-[0.012em]">
+              <label className="grid gap-[7px] text-sm leading-5 font-medium lg:gap-1.5 lg:text-base lg:font-semibold lg:tracking-[0.012em]">
                 Mensaje / comentario
                 <textarea
                   className={`${fieldClassName} min-h-[107px] resize-y py-3 lg:min-h-[92px]`}
@@ -123,7 +123,7 @@ export default function ContactPage() {
 
             <button
               aria-disabled="true"
-              className="mt-[30px] inline-flex min-h-12 w-full cursor-not-allowed items-center justify-center rounded-full bg-brand px-7 text-sm leading-5 font-semibold text-surface lg:mt-8 lg:w-auto lg:text-base lg:tracking-[0.012em]"
+              className="mt-[30px] inline-flex min-h-12 w-full cursor-not-allowed items-center justify-center rounded-full bg-brand px-7 text-sm leading-5 font-medium text-surface lg:mt-8 lg:w-auto lg:text-base lg:font-semibold lg:tracking-[0.012em]"
               title="El envío se habilitará al definir el canal de recepción"
               type="button"
             >

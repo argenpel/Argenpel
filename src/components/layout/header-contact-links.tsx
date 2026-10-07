@@ -29,6 +29,13 @@ const menuIconCenters = {
   location: 160,
 } as const;
 
+const footerIconPosition = {
+  whatsapp: "left-[15.5px]",
+  instagram: "left-[47.5px]",
+  email: "left-[82.5px]",
+  location: "left-[115.5px]",
+} as const;
+
 export function HeaderContactLinks({
   links,
   variant,
@@ -46,7 +53,7 @@ export function HeaderContactLinks({
           : variant === "mobile"
             ? "mt-2 justify-between border-t border-border pt-3"
             : variant === "footer"
-              ? "gap-0 lg:gap-0.5"
+              ? "relative h-11 w-32 gap-0 lg:h-auto lg:w-auto lg:gap-0.5"
               : "-mr-1.5 gap-0.5",
       )}
     >
@@ -61,8 +68,9 @@ export function HeaderContactLinks({
                 : variant === "mobile"
                   ? "w-11 bg-brand hover:bg-brand-dark focus-visible:outline-brand-dark"
                   : variant === "footer"
-                    ? "w-8 hover:bg-brand/30 focus-visible:outline-surface"
+                    ? "absolute top-0 w-8 -translate-x-1/2 hover:bg-brand/30 focus-visible:outline-surface lg:static lg:translate-x-0"
                     : "w-8 hover:bg-brand/30 focus-visible:outline-surface",
+              variant === "footer" && footerIconPosition[key],
             )}
             href={href}
             style={
@@ -73,12 +81,18 @@ export function HeaderContactLinks({
               aria-hidden="true"
               className={cn(
                 "flex items-center justify-center",
-                (variant === "desktop" || variant === "footer") &&
+                variant === "desktop" &&
                   key === "whatsapp" &&
                   "translate-x-0.5",
-                (variant === "desktop" || variant === "footer") &&
+                variant === "footer" &&
+                  key === "whatsapp" &&
+                  "lg:translate-x-0.5",
+                variant === "desktop" &&
                   key === "email" &&
                   "translate-x-px translate-y-[0.5px]",
+                variant === "footer" &&
+                  key === "email" &&
+                  "lg:translate-x-px lg:translate-y-[0.5px]",
                 key === "whatsapp" &&
                   variant === "menu" &&
                   "size-[23.3898px] [mask-image:url('/icons/menu-whatsapp-mask.svg')] [mask-mode:alpha] [mask-size:23.3898px_23.3898px] [mask-repeat:no-repeat]",
