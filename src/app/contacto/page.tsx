@@ -214,21 +214,6 @@ export default function ContactPage() {
         </aside>
       </section>
 
-      <section
-        className="flex min-h-[188px] items-center justify-center px-6 text-center text-[15px] leading-6 lg:hidden"
-        aria-label="Ubicación de Argenpel"
-      >
-        <a
-          className="-translate-y-[5px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
-          href={companyLinks.location.url}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Ecuador 2615, Villa Maipú,
-          <br />
-          San Martín, Buenos Aires
-        </a>
-      </section>
       <LocationMap />
       <VisitBanner />
     </main>
