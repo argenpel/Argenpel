@@ -1,8 +1,5 @@
 import { PageHero } from "@/components/sections/page-hero";
-import {
-  SocialBanner,
-  VisitBanner,
-} from "@/components/sections/shared-banners";
+import { VisitBanner } from "@/components/sections/shared-banners";
 import { PlaceholderMedia } from "@/components/ui/placeholder-media";
 import { pageMetadata } from "@/lib/metadata";
 
@@ -58,14 +55,14 @@ export default function CompanyPage() {
 
       <section className="px-6 pt-10 pb-[45px] lg:min-h-[1313px] lg:px-10 lg:pt-[112px] lg:pb-[148px]">
         <div className="mx-auto max-w-[1260px]">
-          <div className="grid items-start lg:max-w-[1229px] lg:grid-cols-[minmax(0,492fr)_minmax(0,652fr)] lg:gap-[clamp(2rem,5.9vw,85px)]">
+          <div className="grid items-start lg:max-w-[1229px] lg:translate-x-0.5 lg:grid-cols-[minmax(0,492fr)_minmax(0,652fr)] lg:gap-[clamp(2rem,5.9vw,85px)]">
             <PlaceholderMedia className="order-2 mx-auto aspect-[327/356] w-full max-w-[492px] rounded-lg border border-border bg-surface lg:sticky lg:top-8 lg:order-none lg:mt-[5px] lg:aspect-[492/540] lg:max-w-[min(492px,calc((100svh-64px)*492/540))] lg:rounded-xl" />
             <div className="contents min-w-0 lg:block">
               <div className="order-1 mb-10 lg:mb-0">
                 <h2 className="text-xl leading-[30px] font-semibold text-brand lg:text-[clamp(1.75rem,8vw,2rem)] lg:leading-[48px]">
                   Quiénes somos
                 </h2>
-                <div className="mt-5 max-w-[618px] space-y-6 text-[15px] leading-6 lg:mt-7 lg:space-y-7 lg:text-xl lg:leading-7">
+                <div className="mt-5 max-w-[618px] space-y-6 text-[15px] leading-6 lg:mt-7 lg:space-y-7 lg:text-xl lg:leading-7 lg:tracking-[-0.1px]">
                   <p>
                     Desde hace más de una década trabajamos con un propósito
                     claro: satisfacer las necesidades de nuestros clientes,
@@ -81,7 +78,7 @@ export default function CompanyPage() {
                 </div>
               </div>
 
-              <div className="order-3 mt-12 lg:mt-7">
+              <div className="order-3 mt-12 lg:mt-14">
                 <CompanySeparator />
                 {companyDetails.map((item) => (
                   <div key={item.title}>
@@ -98,7 +95,7 @@ export default function CompanyPage() {
                 ))}
 
                 <div className="mt-[47px] flex items-center justify-between gap-2 lg:mt-7 lg:flex-wrap lg:justify-start lg:gap-x-8 lg:gap-y-5 lg:px-6">
-                  <p className="text-base leading-6 font-semibold lg:translate-y-[3.5px] lg:text-2xl lg:leading-[31px]">
+                  <p className="text-base leading-6 font-semibold lg:min-w-[277px] lg:translate-y-[3.5px] lg:text-2xl lg:leading-[31px]">
                     Conocé a nuestro socio
                   </p>
                   <a
@@ -116,8 +113,7 @@ export default function CompanyPage() {
         </div>
       </section>
 
-      <SocialBanner titleClassName="lg:-translate-y-[8.5px] lg:leading-[31px]" />
-      <VisitBanner titleClassName="lg:text-[clamp(1.5rem,7.5vw,2rem)] lg:leading-[48px] lg:font-semibold" />
+      <VisitBanner />
     </main>
   );
 }

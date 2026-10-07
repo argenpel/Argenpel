@@ -3,10 +3,7 @@ import Link from "next/link";
 
 import { SiteHeader } from "@/components/layout/site-header";
 import { HeroSlideshow } from "@/components/sections/hero-slideshow";
-import {
-  SocialBanner,
-  VisitBanner,
-} from "@/components/sections/shared-banners";
+import { VisitBanner } from "@/components/sections/shared-banners";
 import { categories } from "@/data/categories";
 import { companyLinks } from "@/data/company";
 import { heroImages } from "@/data/home";
@@ -40,11 +37,11 @@ export default function HomePage() {
 
       <section className="bg-surface px-6 pt-[46px] pb-[110px] lg:pt-[88px] lg:pb-[81px]">
         <div className="mx-auto max-w-[1240px] text-center">
-          <h2 className="text-xl leading-[30px] font-semibold lg:text-[clamp(1.75rem,8vw,2rem)] lg:leading-[48px] lg:font-medium lg:whitespace-nowrap">
+          <h2 className="text-xl leading-[30px] font-semibold lg:text-[clamp(1.75rem,8vw,2rem)] lg:leading-[48px] lg:whitespace-nowrap">
             Nuestros productos
           </h2>
 
-          <div className="mt-[67px] grid gap-12 lg:mt-[70px] lg:grid-cols-2 xl:grid-cols-4 xl:gap-8">
+          <div className="mt-[67px] grid gap-12 lg:mt-[70px] lg:grid-cols-2 xl:grid-cols-4 xl:gap-8 xl:[&>a:nth-child(1)]:-translate-x-[9px] xl:[&>a:nth-child(2)]:-translate-x-[10px] xl:[&>a:nth-child(3)]:-translate-x-[5px] xl:[&>a:nth-child(4)]:-translate-x-[14.5px]">
             {categories.map((category) => (
               <Link
                 className="group flex flex-col items-center justify-start rounded-xl focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-brand"
@@ -93,7 +90,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <SocialBanner />
       <VisitBanner />
     </main>
   );

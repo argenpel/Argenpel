@@ -3,10 +3,7 @@ import { notFound } from "next/navigation";
 
 import { ProductGallery } from "@/components/product-gallery";
 import { PageHero } from "@/components/sections/page-hero";
-import {
-  SocialBanner,
-  VisitBanner,
-} from "@/components/sections/shared-banners";
+import { VisitBanner } from "@/components/sections/shared-banners";
 import { categories } from "@/data/categories";
 import { products } from "@/data/products";
 import { pageMetadata } from "@/lib/metadata";
@@ -52,10 +49,13 @@ function ProductCard({
   product: Product;
   reverse: boolean;
 }) {
-  const specifications = getProductSpecifications(product);
-  const mobileSpecifications = getProductSpecifications(product, {
+  const specifications = getProductSpecifications(product, {
     compactWeights: true,
   });
+  const [institutionalTitle, institutionalQuality] =
+    product.family === "institutional-toilet-paper"
+      ? product.name.split(" Blanco ")
+      : [];
 
   return (
     <article
@@ -69,7 +69,15 @@ function ProductCard({
             reverse && "min-[1330px]:order-2",
           )}
         >
-          <ProductGallery images={product.images} productName={product.name} />
+          <ProductGallery
+            images={product.images}
+            productName={product.name}
+            className={
+              product.id === "institutional-toilet-paper-eco"
+                ? "lg:aspect-[500/347]"
+                : undefined
+            }
+          />
         </div>
       )}
 
@@ -81,43 +89,29 @@ function ProductCard({
             : reverse && "min-[1330px]:order-1",
         )}
       >
-        <h2 className="min-h-[60px] max-w-[500px] text-xl leading-[26px] font-semibold min-[1024px]:min-h-0 min-[1024px]:text-[36px] min-[1024px]:leading-[46px] min-[1330px]:min-h-[52px]">
-          {product.name}
+        <h2 className="min-h-[60px] max-w-[500px] text-xl leading-[26px] font-semibold min-[1024px]:min-h-0 min-[1024px]:text-[24px] min-[1024px]:leading-[31px] min-[1330px]:min-h-[52px]">
+          {institutionalQuality ? (
+            <>
+              {institutionalTitle} <br className="hidden min-[1024px]:block" />
+              Blanco {institutionalQuality}
+            </>
+          ) : (
+            product.name
+          )}
         </h2>
         <dl
           className={cn(
             "max-w-[480px] min-[1024px]:mt-[15px]",
-            product.titleLines === 2 && "min-[1330px]:mt-[25px]",
+            institutionalQuality && "min-[1330px]:mt-[55px]",
           )}
         >
-          {specifications.map((specification, index) => (
+          {specifications.map((specification) => (
             <div
               className="min-h-[33px] border-b border-border py-[6px] text-sm leading-5 font-medium min-[1024px]:min-h-0 min-[1024px]:pt-[13px] min-[1024px]:pb-[10px] min-[1024px]:text-base min-[1024px]:font-semibold min-[1024px]:tracking-[0.012em] min-[1024px]:first:pt-0 min-[1024px]:first:pb-[9px]"
               key={specification.label}
             >
-              <dt className="inline">
-                <span
-                  aria-hidden="true"
-                  className="mr-1 hidden min-[1024px]:inline"
-                >
-                  ›
-                </span>
-                {specification.label}:{" "}
-              </dt>
-              <dd className="inline">
-                {mobileSpecifications[index].value === specification.value ? (
-                  specification.value
-                ) : (
-                  <>
-                    <span className="min-[1024px]:hidden">
-                      {mobileSpecifications[index].value}
-                    </span>
-                    <span className="hidden min-[1024px]:inline">
-                      {specification.value}
-                    </span>
-                  </>
-                )}
-              </dd>
+              <dt className="inline">{specification.label}: </dt>
+              <dd className="inline">{specification.value}</dd>
             </div>
           ))}
         </dl>
@@ -143,12 +137,11 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       <PageHero
         active="products"
         imageSrc="/images/products/papeles-argenpel-header-productos.jpg"
-        label="PRODUCTOS"
         title={category.name}
       />
 
-      <section className="px-6 py-[47px] min-[1024px]:px-10 min-[1024px]:py-2">
-        <div className="mx-auto grid max-w-[1250px] gap-[47px] min-[1024px]:block">
+      <section className="px-6 py-[47px] min-[1024px]:px-10 min-[1024px]:pt-[43px] min-[1024px]:pb-8">
+        <div className="mx-auto grid max-w-[1250px] gap-[47px] min-[1024px]:gap-[66px]">
           {categoryProducts.map((product, index) => (
             <ProductCard
               key={product.id}
@@ -159,9 +152,6 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         </div>
       </section>
 
-      <div className="min-[1024px]:hidden">
-        <SocialBanner />
-      </div>
       <VisitBanner />
     </main>
   );

@@ -31,20 +31,37 @@ export function PageHero({
     : imageSrc;
 
   return (
-    <section className="relative grid min-h-[219px] grid-rows-[auto_minmax(0,1fr)] bg-ink text-center text-surface lg:min-h-72 lg:bg-placeholder">
+    <section className="relative grid min-h-[219px] grid-rows-[auto_minmax(0,1fr)] bg-ink text-center text-surface lg:min-h-72">
       {imageSrc ? (
-        <div className="absolute inset-0 overflow-hidden">
-          <picture>
+        <div
+          className={cn(
+            "absolute inset-0 overflow-hidden",
+            active === "company" && "lg:top-0.5",
+          )}
+        >
+          <picture
+            className={cn(
+              active === "contact" &&
+                "lg:relative lg:block lg:aspect-[4/3] lg:w-full",
+            )}
+          >
             <source media="(max-width: 1023px)" srcSet={mobileImageSrc} />
             <Image
               alt=""
-              src={imageSrc}
+              src={mobileImageSrc ?? imageSrc}
               fill
               priority
               sizes="100vw"
               className={cn(
-                "h-[288px]! object-cover object-center lg:h-full! lg:opacity-100",
+                "h-[288px]! object-cover object-center",
                 active === "company" ? "opacity-48" : "opacity-42",
+                active === "company" &&
+                  "lg:top-[-294.28%]! lg:left-[0.02%]! lg:h-auto! lg:w-full! lg:opacity-50",
+                active === "products" &&
+                  "lg:top-[-200%]! lg:h-auto! lg:w-full! lg:opacity-50",
+                active === "contact" &&
+                  "lg:top-[99.989533%]! lg:left-[0.034414%]! lg:h-auto! lg:w-3/4! lg:origin-top-left lg:-rotate-90 lg:opacity-50",
+                !active && "lg:h-full! lg:opacity-100",
               )}
             />
           </picture>
@@ -53,7 +70,7 @@ export function PageHero({
       <SiteHeader active={active} />
       <div
         className={cn(
-          "relative z-10 flex min-h-0 items-end justify-center px-6 pb-[54px] lg:px-[var(--ap-page-gutter)] lg:pb-[62px]",
+          "relative z-10 flex min-h-0 items-end justify-center px-6 pb-[54px] lg:px-[var(--ap-page-gutter)] lg:pb-[75px]",
           contentClassName,
         )}
       >
@@ -65,7 +82,7 @@ export function PageHero({
           ) : null}
           <h1
             className={cn(
-              "text-2xl leading-9 font-semibold lg:text-[clamp(1.75rem,8vw,2.5rem)] lg:leading-tight lg:font-bold lg:whitespace-nowrap",
+              "text-2xl leading-9 font-semibold lg:text-[32px] lg:leading-[48px] lg:whitespace-nowrap",
               titleClassName,
             )}
           >

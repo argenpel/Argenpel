@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import type { Product } from "@/types/product";
 
 type ProductGalleryProps = {
+  className?: string;
   images: Product["images"];
   productName: string;
 };
@@ -30,7 +31,11 @@ function GalleryChevron({ previous = false }: { previous?: boolean }) {
   );
 }
 
-export function ProductGallery({ images, productName }: ProductGalleryProps) {
+export function ProductGallery({
+  className,
+  images,
+  productName,
+}: ProductGalleryProps) {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const selectedImage = images[selectedIndex];
   const canRotate = images.length > 1;
@@ -47,7 +52,12 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
   };
 
   return (
-    <div className="group relative aspect-[327/230] min-w-0 overflow-hidden lg:aspect-[500/349]">
+    <div
+      className={cn(
+        "group relative aspect-[327/230] min-w-0 overflow-hidden lg:aspect-[500/349]",
+        className,
+      )}
+    >
       <div className="absolute inset-0">
         <Image
           alt={selectedImage.alt}
