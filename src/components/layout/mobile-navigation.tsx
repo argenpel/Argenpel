@@ -182,8 +182,8 @@ export function MobileNavigation({ active }: { active?: NavigationKey }) {
 
         <div className="flex shrink-0 flex-wrap items-center justify-between gap-y-2 px-6 pb-[13px]">
           <p className="text-[9px] leading-[13.5px] text-border">
-            © Argenpel ·<br />
-            Placeholder de datos legales
+            © 2026 Argenpel ·<br />
+            Todos los derechos reservados.
           </p>
           <HeaderContactLinks links={companyContactLinks} variant="menu" />
         </div>

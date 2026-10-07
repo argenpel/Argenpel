@@ -99,9 +99,9 @@ export function SiteFooter() {
 
         <div className="flex min-h-[61px] flex-wrap items-center justify-between gap-2 pt-3 lg:min-h-[115px] lg:gap-8 lg:py-0 lg:pl-[15px]">
           <p className="flex-1 text-[9px] leading-[13.5px] text-border lg:text-sm lg:leading-6 lg:text-surface lg:opacity-70">
-            © Argenpel ·{" "}
+            © 2026 Argenpel ·{" "}
             <span className="block lg:inline">
-              Placeholder de datos legales
+              Todos los derechos reservados.
             </span>
           </p>
           <a
