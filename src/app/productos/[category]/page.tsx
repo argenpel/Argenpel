@@ -89,7 +89,7 @@ function ProductCard({
             : reverse && "min-[1330px]:order-1",
         )}
       >
-        <h2 className="min-h-[60px] max-w-[500px] text-xl leading-[26px] font-semibold min-[1024px]:min-h-0 min-[1024px]:text-[24px] min-[1024px]:leading-[31px] min-[1330px]:min-h-[52px]">
+        <h2 className="max-w-[500px] text-xl leading-[26px] font-semibold min-[1024px]:min-h-0 min-[1024px]:text-[24px] min-[1024px]:leading-[31px] min-[1330px]:min-h-[52px]">
           {institutionalQuality ? (
             <>
               {institutionalTitle} <br className="hidden min-[1024px]:block" />
@@ -101,7 +101,7 @@ function ProductCard({
         </h2>
         <dl
           className={cn(
-            "max-w-[480px] min-[1024px]:mt-[15px]",
+            "mt-[8px] max-w-[480px] min-[1024px]:mt-[15px]",
             institutionalQuality && "min-[1330px]:mt-[55px]",
           )}
         >
