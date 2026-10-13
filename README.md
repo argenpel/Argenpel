@@ -35,6 +35,10 @@ pasos en cada push a `main` y en cada pull request.
   (ver `docs/catalog.md`).
 - Links de catálogo, Instagram y ubicación: `src/data/company.ts`.
 - Navegación de header y footer: `src/data/navigation.ts`.
+- Firma del footer: `src/components/layout/site-footer.tsx`. El enlace
+  `https://vntagencia.com/r/argenpel` permite administrar su destino desde VNT;
+  `data-vnt-signature` identifica la firma para su verificación. El SVG y la
+  tipografía se sirven desde este proyecto.
 - Imágenes del hero rotativo de la home: `src/data/home.ts` (cambian cada 6 s
   con fundido; conservan el recorte de Figma y el tono se aplica en el hero).
 - Fotos en `public/images/`. Subir fotos opacas como JPEG de hasta ~1600 px de

@@ -105,9 +105,10 @@ export function SiteFooter() {
             </span>
           </p>
           <a
-            aria-label="Created by VNT Agencia: abrir Instagram en una nueva pestaña"
+            aria-label="Sitio web de VNT Agencia (abre en una nueva pestaña)"
             className="group ml-auto inline-flex min-h-11 shrink-0 items-center gap-2 rounded-sm text-border transition-colors hover:text-surface focus-visible:text-surface focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-surface md:gap-3"
-            href="https://www.instagram.com/vnt.agencia/"
+            data-vnt-signature="argenpel"
+            href="https://vntagencia.com/r/argenpel"
             rel="noopener noreferrer"
             target="_blank"
           >
