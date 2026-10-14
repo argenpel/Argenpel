@@ -58,7 +58,14 @@ export function ProductGallery({
         className,
       )}
     >
-      <div className="absolute inset-0">
+      <div
+        className="absolute inset-0"
+        style={
+          selectedImage.widthPercent
+            ? { width: `${selectedImage.widthPercent}%` }
+            : undefined
+        }
+      >
         <Image
           alt={selectedImage.alt}
           className="object-cover"

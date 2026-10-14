@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 
+import { companyName } from "@/data/company";
 import { siteDescription } from "@/lib/site";
 
-const siteName = "Argenpel";
+const siteName = companyName;
 
 // A page that sets openGraph replaces the inherited openGraph entirely,
 // including the image from src/app/opengraph-image.jpg, so every page builds

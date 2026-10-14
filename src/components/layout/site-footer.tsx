@@ -5,7 +5,7 @@ import localFont from "next/font/local";
 import { HeaderContactLinks } from "@/components/layout/header-contact-links";
 import { Disclosure } from "@/components/ui/disclosure";
 import { categories } from "@/data/categories";
-import { companyContactLinks } from "@/data/company";
+import { companyContactLinks, companyName } from "@/data/company";
 import { navigation } from "@/data/navigation";
 
 const hostGrotesk = localFont({
@@ -24,22 +24,16 @@ export function SiteFooter() {
           <Link
             className="shrink-0 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-surface lg:translate-y-[1.5px]"
             href="/"
-            aria-label="Argenpel, inicio"
+            aria-label={`${companyName}, inicio`}
           >
-            <picture className="block">
-              <source
-                media="(max-width: 1023px)"
-                srcSet="/brand/argenpel-mobile-footer-logo.svg"
-              />
-              <Image
-                alt="Papelera Argenpel"
-                className="h-[49px] w-[184.692px] max-w-none lg:h-[60.0722px] lg:w-[207px]"
-                height={60.0722}
-                src="/brand/argenpel-footer-logo.svg"
-                unoptimized
-                width={207}
-              />
-            </picture>
+            <Image
+              alt={`Papelera ${companyName}`}
+              className="h-auto w-[177px] max-w-none lg:w-[217px]"
+              height={60.0722}
+              src="/brand/argenpel-footer-logo.svg"
+              unoptimized
+              width={217}
+            />
           </Link>
 
           <nav
@@ -99,7 +93,7 @@ export function SiteFooter() {
 
         <div className="flex min-h-[61px] flex-wrap items-center justify-between gap-2 pt-3 lg:min-h-[115px] lg:gap-8 lg:py-0 lg:pl-[15px]">
           <p className="flex-1 text-[9px] leading-[13.5px] text-border lg:text-sm lg:leading-6 lg:text-surface lg:opacity-70">
-            © 2026 Argenpel ·{" "}
+            © 2026 {companyName} ·{" "}
             <span className="block lg:inline">
               Todos los derechos reservados.
             </span>

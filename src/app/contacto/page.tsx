@@ -3,14 +3,13 @@ import Image from "next/image";
 import { LocationMap } from "@/components/sections/location-map";
 import { PageHero } from "@/components/sections/page-hero";
 import { VisitBanner } from "@/components/sections/shared-banners";
-import { companyLinks } from "@/data/company";
+import { companyLinks, companyName } from "@/data/company";
 import { pageMetadata } from "@/lib/metadata";
 import { cn } from "@/lib/utils";
 
 export const metadata = pageMetadata({
   title: "Contacto",
-  description:
-    "Contactá a Argenpel para consultas y pedidos de venta por mayor.",
+  description: `Contactá a ${companyName} para consultas y pedidos de venta por mayor.`,
   path: "/contacto",
 });
 

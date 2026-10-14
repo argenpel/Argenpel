@@ -1,5 +1,7 @@
+export const companyName = "ARGEN PEL";
+
 export const companyLocation = {
-  name: "Argen Pel",
+  name: companyName,
   locality: "San Martín, Buenos Aires",
   address: "Ecuador 2615, Villa Maipú, San Martín, Buenos Aires",
   latitude: -34.5580155,
@@ -38,12 +40,12 @@ export const companyContactLinks = [
   },
   {
     key: "instagram",
-    label: "Argenpel en Instagram",
+    label: `${companyName} en Instagram`,
     href: companyLinks.instagram.url,
   },
   {
     key: "email",
-    label: "Enviar correo a Argenpel",
+    label: `Enviar correo a ${companyName}`,
     href: companyLinks.email.url,
   },
   {

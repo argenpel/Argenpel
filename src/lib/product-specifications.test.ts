@@ -57,16 +57,22 @@ describe("getProductSpecifications", () => {
       "Medida: 20 × 24 o 20 × 36",
     ]);
     expect(specificationsOf("interfolded-towel-beige")).toEqual([
-      "Calidad: beige premium",
+      "Calidad: beige premium / beige eco (consultar disponibilidad)",
       "Presentación: 1.500 / 2.000 / 2.500 unidades o a medida",
       "Pallet: 90 cajas",
       "Medida: 20 × 24 o 20 × 36",
     ]);
   });
 
-  it("describes roll towel", () => {
+  it("keeps white and beige roll towel specifications separate", () => {
     expect(specificationsOf("roll-towel")).toEqual([
-      "Calidad: blanco premium / beige premium",
+      "Calidad: blanco premium",
+      "Presentación: 2 / 3 / 4 unidades · pallet: 90 packs",
+      "Peso por pack: 1,800 / 2,100 / 3 kg o a medida",
+      "Precorte: con o sin precorte",
+    ]);
+    expect(specificationsOf("roll-towel-beige")).toEqual([
+      "Calidad: beige",
       "Presentación: 2 / 3 / 4 unidades · pallet: 90 packs",
       "Peso por pack: 1,800 / 2,100 / 3 kg o a medida",
       "Precorte: con o sin precorte",
@@ -75,7 +81,7 @@ describe("getProductSpecifications", () => {
 
   it("describes industrial roll", () => {
     expect(specificationsOf("industrial-double-ply-roll")).toEqual([
-      "Calidad: blanco premium / blanco eco / beige eco",
+      "Calidad: blanco premium / blanco eco",
       "Presentación: 2 unidades · pallet: 80 packs",
       "Peso por pack: 2,800 / 3,400 kg o a medida",
       "Opciones: con/sin precorte · alto: 21 o 24 cm",
@@ -89,6 +95,7 @@ describe("getProductSpecifications", () => {
       "family-toilet-paper-30": "2,5 / 3 kg o a medida",
       "family-toilet-paper-12-handle": "2,4 kg o a medida",
       "roll-towel": "1,8 / 2,1 / 3 kg o a medida",
+      "roll-towel-beige": "1,8 / 2,1 / 3 kg o a medida",
       "industrial-double-ply-roll": "2,8 / 3,4 kg o a medida",
     };
 

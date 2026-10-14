@@ -5,7 +5,7 @@ import { HeaderContactLinks } from "@/components/layout/header-contact-links";
 import { MobileNavigation } from "@/components/layout/mobile-navigation";
 import { Disclosure } from "@/components/ui/disclosure";
 import { categories } from "@/data/categories";
-import { companyContactLinks } from "@/data/company";
+import { companyContactLinks, companyName } from "@/data/company";
 import { navigation, type NavigationKey } from "@/data/navigation";
 import { cn } from "@/lib/utils";
 
@@ -111,24 +111,18 @@ export function SiteHeader({ active }: SiteHeaderProps) {
     <header className="relative z-20 w-full shrink-0 bg-brand lg:bg-transparent">
       <div className="mx-auto flex h-[88px] w-full max-w-[calc(1264px+2*var(--ap-page-gutter))] items-center justify-between gap-4 px-6 lg:h-auto lg:gap-5 lg:px-[var(--ap-page-gutter)] lg:py-[38px]">
         <Link
-          className="relative aspect-[162.077/43] w-[162.077px] shrink-0 -translate-y-[2.5px] rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-surface lg:aspect-[279/74] lg:w-[279px] lg:translate-y-0"
+          className="relative aspect-[299.923/80.4021] w-[162.077px] shrink-0 -translate-y-[2.5px] rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-surface lg:w-[299.923px] lg:translate-y-0"
           href="/"
-          aria-label="Argenpel, inicio"
+          aria-label={`${companyName}, inicio`}
         >
-          <picture>
-            <source
-              media="(max-width: 1023px)"
-              srcSet="/brand/argenpel-mobile-logo.svg"
-            />
-            <Image
-              alt="Papelera Argenpel"
-              className="object-contain"
-              fill
-              loading="eager"
-              sizes="(min-width: 1024px) 279px, 163px"
-              src="/brand/argenpel-logo.svg"
-            />
-          </picture>
+          <Image
+            alt={`Papelera ${companyName}`}
+            className="object-contain"
+            fill
+            loading="eager"
+            sizes="(min-width: 1024px) 300px, 163px"
+            src="/brand/argenpel-logo.svg"
+          />
         </Link>
 
         <MobileNavigation active={active} />

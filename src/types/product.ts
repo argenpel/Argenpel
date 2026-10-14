@@ -31,6 +31,7 @@ export type Product = {
     | "industrial-roll"
     | "interfolded-towel";
   qualities: string[];
+  qualityNote?: string;
   packageType: "pack" | "box";
   unitsPerPackage: number[];
   customUnits?: true;
@@ -48,5 +49,6 @@ export type Product = {
     alt: string;
     objectPosition?: string;
     scale?: number;
+    widthPercent?: number;
   }[];
 };

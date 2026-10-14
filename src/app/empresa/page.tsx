@@ -1,12 +1,12 @@
 import { PageHero } from "@/components/sections/page-hero";
 import { VisitBanner } from "@/components/sections/shared-banners";
 import { PlaceholderMedia } from "@/components/ui/placeholder-media";
+import { companyName } from "@/data/company";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata({
   title: "Empresa",
-  description:
-    "Conocé a Argenpel: rebobinado y fraccionamiento de papel tissue para el mercado industrial y doméstico.",
+  description: `Conocé a ${companyName}: rebobinado y fraccionamiento de papel tissue para el mercado industrial y doméstico.`,
   path: "/empresa",
 });
 
@@ -71,9 +71,10 @@ export default function CompanyPage() {
                     responsabilidad.
                   </p>
                   <p>
-                    ARGENPEL es una empresa dedicada al rebobinado y
-                    fraccionamiento de papel tissue, con una propuesta orientada
-                    tanto al mercado industrial como al sector doméstico.
+                    <span className="whitespace-nowrap">{companyName}</span> es
+                    una empresa dedicada al rebobinado y fraccionamiento de
+                    papel tissue, con una propuesta orientada tanto al mercado
+                    industrial como al sector doméstico.
                   </p>
                 </div>
               </div>

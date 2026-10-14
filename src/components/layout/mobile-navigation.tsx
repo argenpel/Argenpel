@@ -8,7 +8,7 @@ import { useEffect, useId, useRef, useState } from "react";
 import { HeaderContactLinks } from "@/components/layout/header-contact-links";
 import { Disclosure } from "@/components/ui/disclosure";
 import { categories } from "@/data/categories";
-import { companyContactLinks } from "@/data/company";
+import { companyContactLinks, companyName } from "@/data/company";
 import { navigation, type NavigationKey } from "@/data/navigation";
 
 const linkClassName =
@@ -91,15 +91,15 @@ export function MobileNavigation({ active }: { active?: NavigationKey }) {
         <div className="flex h-[108px] shrink-0 items-start justify-between px-6 pt-[33px]">
           <Link
             href="/"
-            aria-label="Argenpel, inicio"
+            aria-label={`${companyName}, inicio`}
             onClick={close}
             className="rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-surface"
           >
             <Image
-              alt="Papelera Argenpel"
-              height={43.2449}
+              alt={`Papelera ${companyName}`}
+              height={43.696}
               width={163}
-              src="/brand/argenpel-mobile-menu-logo.svg"
+              src="/brand/argenpel-logo.svg"
               unoptimized
             />
           </Link>
@@ -181,7 +181,7 @@ export function MobileNavigation({ active }: { active?: NavigationKey }) {
 
         <div className="flex shrink-0 flex-wrap items-center justify-between gap-y-2 px-6 pb-[13px]">
           <p className="text-[9px] leading-[13.5px] text-border">
-            © 2026 Argenpel ·<br />
+            © 2026 {companyName} ·<br />
             Todos los derechos reservados.
           </p>
           <HeaderContactLinks links={companyContactLinks} variant="menu" />

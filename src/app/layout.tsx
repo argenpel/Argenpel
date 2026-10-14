@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 import { SiteFooter } from "@/components/layout/site-footer";
+import { companyName } from "@/data/company";
 import { baseOpenGraph } from "@/lib/metadata";
 import { isIndexable, siteDescription, siteUrl } from "@/lib/site";
 
@@ -15,13 +16,13 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: siteUrl,
   title: {
-    default: "Argenpel",
-    template: "%s | Argenpel",
+    default: companyName,
+    template: `%s | ${companyName}`,
   },
   description: siteDescription,
   openGraph: {
     ...baseOpenGraph,
-    title: "Argenpel",
+    title: companyName,
     description: siteDescription,
   },
   robots: isIndexable ? undefined : { index: false, follow: false },

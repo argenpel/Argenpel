@@ -55,7 +55,7 @@ export function getProductSpecifications(
 ): ProductSpecification[] {
   const quality: ProductSpecification = {
     label: "Calidad",
-    value: slashList(product.qualities.map(lowerFirst)),
+    value: `${slashList(product.qualities.map(lowerFirst))}${product.qualityNote ? ` (${product.qualityNote})` : ""}`,
   };
   const units = slashList(
     product.unitsPerPackage.map((value) => number.format(value)),

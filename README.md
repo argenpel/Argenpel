@@ -1,6 +1,6 @@
-# Argenpel
+# ARGEN PEL
 
-Frontend del sitio institucional y catálogo de productos de Argenpel. El
+Frontend del sitio institucional y catálogo de productos de ARGEN PEL. El
 proyecto no incluye comercio electrónico.
 
 ## Stack
@@ -35,6 +35,8 @@ pasos en cada push a `main` y en cada pull request.
   (ver `docs/catalog.md`).
 - Links de catálogo, Instagram y ubicación: `src/data/company.ts`.
 - Navegación de header y footer: `src/data/navigation.ts`.
+- Nombre público de la marca: `companyName` en `src/data/company.ts`.
+  Los logos de header y footer conservan los SVG originales de Figma.
 - Firma del footer: `src/components/layout/site-footer.tsx`. El enlace
   `https://vntagencia.com/r/argenpel` permite administrar su destino desde VNT;
   `data-vnt-signature` identifica la firma para su verificación. El SVG y la

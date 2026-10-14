@@ -5,6 +5,7 @@ import { ProductGallery } from "@/components/product-gallery";
 import { PageHero } from "@/components/sections/page-hero";
 import { VisitBanner } from "@/components/sections/shared-banners";
 import { categories } from "@/data/categories";
+import { companyName } from "@/data/company";
 import { products } from "@/data/products";
 import { pageMetadata } from "@/lib/metadata";
 import { getProductSpecifications } from "@/lib/product-specifications";
@@ -37,7 +38,7 @@ export async function generateMetadata({
 
   return pageMetadata({
     title: category.name,
-    description: `${productNames.join(", ")}. Venta por mayor de Argenpel.`,
+    description: `${productNames.join(", ")}. Venta por mayor de ${companyName}.`,
     path: `/productos/${category.slug}`,
   });
 }
@@ -60,7 +61,11 @@ function ProductCard({
   return (
     <article
       id={product.slug}
-      className="grid items-start gap-6 min-[1024px]:items-center min-[1024px]:gap-8 min-[1024px]:py-9 min-[1330px]:min-h-[423px] min-[1330px]:grid-cols-[500px_500px] min-[1330px]:gap-[120px] min-[1330px]:px-[65px] min-[1330px]:py-[37px]"
+      className={cn(
+        "grid items-start gap-6 min-[1024px]:items-center min-[1024px]:gap-8 min-[1024px]:py-9 min-[1330px]:min-h-[423px] min-[1330px]:grid-cols-[500px_500px] min-[1330px]:gap-[120px] min-[1330px]:px-[65px] min-[1330px]:py-[37px]",
+        product.family === "roll-towel" &&
+          "min-[1330px]:items-start min-[1330px]:pb-[34px]",
+      )}
     >
       {product.images.length > 0 && (
         <div
@@ -75,7 +80,9 @@ function ProductCard({
             className={
               product.id === "institutional-toilet-paper-eco"
                 ? "lg:aspect-[500/347]"
-                : undefined
+                : product.family === "roll-towel"
+                  ? "lg:aspect-[500/352]"
+                  : undefined
             }
           />
         </div>
@@ -84,12 +91,15 @@ function ProductCard({
       <div
         className={cn(
           "order-1 min-w-0 min-[1024px]:order-none",
+          product.family === "roll-towel" && "min-[1330px]:pt-[60px]",
           product.images.length === 0
-            ? "min-[1330px]:col-span-2"
+            ? reverse
+              ? "min-[1330px]:col-start-1"
+              : "min-[1330px]:col-start-2"
             : reverse && "min-[1330px]:order-1",
         )}
       >
-        <h2 className="max-w-[500px] text-xl leading-[26px] font-semibold min-[1024px]:min-h-0 min-[1024px]:text-[24px] min-[1024px]:leading-[31px] min-[1330px]:min-h-[52px]">
+        <h2 className="max-w-[500px] text-xl leading-[26px] font-semibold uppercase min-[1024px]:min-h-0 min-[1024px]:text-[24px] min-[1024px]:leading-[31px] min-[1330px]:min-h-[52px]">
           {institutionalQuality ? (
             <>
               {institutionalTitle} <br className="hidden min-[1024px]:block" />
@@ -101,16 +111,19 @@ function ProductCard({
         </h2>
         <dl
           className={cn(
-            "mt-[8px] max-w-[480px] min-[1024px]:mt-[15px]",
+            "mt-[8px] max-w-[500px] min-[1024px]:mt-[15px]",
             institutionalQuality && "min-[1330px]:mt-[55px]",
           )}
         >
           {specifications.map((specification) => (
             <div
-              className="min-h-[33px] border-b border-border py-[6px] text-sm leading-5 font-medium min-[1024px]:min-h-0 min-[1024px]:pt-[13px] min-[1024px]:pb-[10px] min-[1024px]:text-base min-[1024px]:font-semibold min-[1024px]:tracking-[0.012em] min-[1024px]:first:pt-0 min-[1024px]:first:pb-[9px]"
+              className="product-specification relative min-h-[33px] border-b border-transparent py-[6px] text-sm leading-5 font-medium min-[1024px]:min-h-0 min-[1024px]:pt-[13px] min-[1024px]:pb-[10px] min-[1024px]:text-base min-[1024px]:font-semibold min-[1024px]:tracking-[0.012em] min-[1024px]:first:pt-0 min-[1024px]:first:pb-[9px]"
               key={specification.label}
             >
-              <dt className="inline">{specification.label}: </dt>
+              <dt className="inline">
+                <span aria-hidden="true">› </span>
+                {specification.label}:{" "}
+              </dt>
               <dd className="inline">{specification.value}</dd>
             </div>
           ))}
