@@ -185,8 +185,12 @@ export const products: Product[] = [
     packWeightsKg: ["1.800", "2.100", "3"],
     customPackWeight: true,
     perforation: ["with", "without"],
-    // Figma has no product photo yet; do not substitute a white roll.
-    images: [],
+    images: [
+      {
+        src: "/images/products/roll-towel-beige.jpg",
+        alt: "Toalla en rollo beige, pack de 4 unidades",
+      },
+    ],
   },
   {
     id: "industrial-double-ply-roll",
@@ -210,7 +214,6 @@ export const products: Product[] = [
       {
         src: "/images/products/industrial-double-ply-roll-eco.jpg",
         alt: "Pack de 2 bobinas industriales de doble hoja, línea ecológica",
-        widthPercent: 98,
       },
     ],
   },

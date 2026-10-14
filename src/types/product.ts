@@ -49,6 +49,5 @@ export type Product = {
     alt: string;
     objectPosition?: string;
     scale?: number;
-    widthPercent?: number;
   }[];
 };

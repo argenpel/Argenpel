@@ -77,13 +77,13 @@ function ProductCard({
           <ProductGallery
             images={product.images}
             productName={product.name}
-            className={
-              product.id === "institutional-toilet-paper-eco"
-                ? "lg:aspect-[500/347]"
-                : product.family === "roll-towel"
-                  ? "lg:aspect-[500/352]"
-                  : undefined
-            }
+            className={cn(
+              product.id === "institutional-toilet-paper-eco" &&
+                "lg:aspect-[500/347]",
+              product.family === "roll-towel" && "lg:aspect-[500/352]",
+              product.id === "roll-towel-beige" &&
+                "lg:aspect-[496/349] lg:max-w-[496px]",
+            )}
           />
         </div>
       )}

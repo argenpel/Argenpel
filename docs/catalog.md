@@ -17,7 +17,7 @@ image). The site reads local product data and images at build time.
   omitted. Internal IDs are not commercial codes.
 - White premium and beige roll towels have separate records. The existing
   `toalla-en-rollo` anchor remains on the white premium record; the beige record
-  uses `toalla-en-rollo-beige` and has no image until a real photo is available.
+  uses `toalla-en-rollo-beige` and the photograph from Figma node `206:843`.
 - `qualityNote` preserves the availability caveat on beige interfolded towels
   separately from the list of qualities.
 - Photos of the x12 and x30 families are not assigned to a quality based on
@@ -33,9 +33,11 @@ photo is the initial view; arrow controls rotate through remaining photos in the
 same card.
 
 The industrial roll gallery includes the original ecological-pack photo from
-Figma node `196:840`. `widthPercent` preserves its narrower image slot. Product
-headings use uppercase styling, and specification rows use a decorative `›`
-prefix, following the Figma product sheets (`66:2`).
+Figma node `196:840`. Both industrial roll photos share the first photo's
+500 × 349 desktop frame, with the same centered cover fit; there is no
+per-image width override. Product headings use uppercase styling, and
+specification rows use a decorative `›` prefix, following the Figma product
+sheets (`66:2`).
 
 ## Updates and verification
 
