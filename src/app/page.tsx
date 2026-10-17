@@ -18,8 +18,8 @@ export default function HomePage() {
         <HeroSlideshow images={heroImages} />
         <SiteHeader active="home" />
         <div className="relative z-10 flex items-stretch justify-center px-6 pt-[168px] pb-[53px] lg:px-[var(--ap-page-gutter)] lg:pt-0 lg:pb-0">
-          <div className="flex w-full max-w-[895px] flex-col items-center justify-between lg:grid lg:grid-rows-[minmax(min-content,2fr)_auto_minmax(0,1fr)]">
-            <h1 className="max-w-[283px] text-[18px] leading-7 font-semibold tracking-normal lg:max-w-none lg:self-center lg:text-[clamp(1.25rem,5vw,2rem)] lg:leading-normal lg:tracking-[-0.05px]">
+          <div className="flex w-full max-w-[895px] flex-col items-center justify-between lg:grid lg:max-w-[906px] lg:grid-rows-[minmax(min-content,2fr)_auto_minmax(0,1fr)]">
+            <h1 className="max-w-[283px] text-[18px] leading-7 font-semibold tracking-normal lg:max-w-none lg:self-center lg:text-[clamp(1.25rem,5vw,2rem)] lg:leading-normal lg:tracking-normal">
               Somos <span className="whitespace-nowrap">{companyName}</span>,
               una empresa dedicada a la fabricación y desarrollo de productos de
               papel&nbsp;tissue&nbsp;para la higiene institucional, reconocida
