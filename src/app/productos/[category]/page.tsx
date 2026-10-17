@@ -99,7 +99,7 @@ function ProductCard({
             : reverse && "min-[1330px]:order-1",
         )}
       >
-        <h2 className="max-w-[500px] text-xl leading-[26px] font-semibold uppercase min-[1024px]:min-h-0 min-[1024px]:text-[24px] min-[1024px]:leading-[31px] min-[1330px]:min-h-[52px]">
+        <h2 className="max-w-[500px] text-xl leading-[26px] font-semibold uppercase min-[1024px]:text-[24px] min-[1024px]:leading-[31px]">
           {institutionalQuality ? (
             <>
               {institutionalTitle} <br className="hidden min-[1024px]:block" />
@@ -109,12 +109,7 @@ function ProductCard({
             product.name
           )}
         </h2>
-        <dl
-          className={cn(
-            "mt-[8px] max-w-[500px] min-[1024px]:mt-[15px]",
-            institutionalQuality && "min-[1330px]:mt-[55px]",
-          )}
-        >
+        <dl className="mt-[8px] max-w-[500px] min-[1024px]:mt-[15px]">
           {specifications.map((specification) => (
             <div
               className="product-specification relative min-h-[33px] border-b border-transparent py-[6px] text-sm leading-5 font-medium min-[1024px]:min-h-0 min-[1024px]:pt-[13px] min-[1024px]:pb-[10px] min-[1024px]:text-base min-[1024px]:font-semibold min-[1024px]:tracking-[0.012em] min-[1024px]:first:pt-0 min-[1024px]:first:pb-[9px]"
