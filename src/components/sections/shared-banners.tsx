@@ -11,15 +11,11 @@ export function VisitBanner({ titleClassName }: BannerProps = {}) {
   return (
     <section className="relative flex min-h-[220px] items-center justify-center overflow-hidden bg-ink px-6 text-center text-surface lg:min-h-[244px]">
       <picture className="absolute inset-0 lg:top-px">
-        <source
-          media="(max-width: 1023px)"
-          srcSet="/images/mobile/planta-industrial-argenpel.jpg"
-        />
         <Image
           alt=""
           src="/images/mobile/planta-industrial-argenpel.jpg"
           fill
-          sizes="100vw"
+          sizes="(min-width: 1024px) 100vw, 120.17vw"
           className="top-[-103.09%]! left-[-17.16%]! h-[273.11%]! w-[120.17%]! max-w-none opacity-48 lg:top-[-364.05%]! lg:left-[0.02%]! lg:h-auto! lg:w-full! lg:opacity-50"
         />
       </picture>

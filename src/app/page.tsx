@@ -66,7 +66,6 @@ export default function HomePage() {
                       alt=""
                       src={category.home.imageSrc}
                       fill
-                      unoptimized
                       sizes="153px"
                       className="object-contain"
                     />

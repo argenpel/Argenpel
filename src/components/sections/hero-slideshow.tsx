@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image, { getImageProps } from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 import type { HeroImage } from "@/data/home";
@@ -13,8 +13,8 @@ type HeroSlideshowProps = {
 };
 
 // Decorative background that crossfades between images. The first image is
-// server-rendered and preloaded; the rest load after the page does. Rotation
-// pauses while the tab is hidden and never starts with reduced motion.
+// server-rendered with high fetch priority; the rest load after the page does.
+// Rotation pauses while the tab is hidden and never starts with reduced motion.
 export function HeroSlideshow({ images }: HeroSlideshowProps) {
   const [rotating, setRotating] = useState(false);
   const [slide, setSlide] = useState<{ active: number; previous?: number }>({
@@ -102,21 +102,31 @@ export function HeroSlideshow({ images }: HeroSlideshowProps) {
             {image.mobileSrc && (
               <source
                 media="(max-width: 1023px)"
-                srcSet={image.mobileSrc}
-                type="image/jpeg"
+                srcSet={
+                  getImageProps({
+                    alt: "",
+                    src: image.mobileSrc,
+                    fill: true,
+                    sizes: "132.05vw",
+                  }).props.srcSet
+                }
+                sizes="132.05vw"
               />
             )}
             <Image
               alt=""
               className="object-cover object-center"
-              fetchPriority={index === 0 ? undefined : "low"}
+              fetchPriority={index === 0 ? "high" : "low"}
               fill
-              loading={index === 0 ? undefined : "eager"}
+              loading="eager"
               onLoad={() => {
                 loaded.current[index] = true;
               }}
-              priority={index === 0}
-              sizes="100vw"
+              sizes={
+                image.mobileSrc
+                  ? "(min-width: 1024px) 100vw, 132.05vw"
+                  : "100vw"
+              }
               src={image.src}
               style={
                 image.objectPosition

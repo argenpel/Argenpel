@@ -45,7 +45,6 @@ export function PageHero({
                 "lg:relative lg:block lg:aspect-[4/3] lg:w-full",
             )}
           >
-            <source media="(max-width: 1023px)" srcSet={mobileImageSrc} />
             <Image
               alt=""
               src={mobileImageSrc ?? imageSrc}
