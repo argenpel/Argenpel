@@ -45,6 +45,14 @@ pasos en cada push a `main` y en cada pull request.
   con fundido; conservan el recorte de Figma y el tono se aplica en el hero).
 - Fotos en `public/images/`. Subir fotos opacas como JPEG de hasta ~1600 px de
   ancho; PNG solo si necesitan transparencia.
+- Video de Empresa: `public/videos/empresa-argenpel.mp4`, con portada en
+  `public/images/company/empresa-argenpel-poster.jpg`. La copia web conserva
+  los 14 s completos en 3:4, a 720 × 960 px y 30 fps, con H.264/yuv420p,
+  CRF 26, preset slow y faststart. El original queda fuera del repositorio.
+  Se reproduce sin sonido y en bucle al entrar en pantalla; se pausa al salir
+  o al ocultar la pestaña.
+  Un clic, Enter o Espacio permite pausar y reanudar sin controles visibles.
+  Con movimiento reducido, espera una interacción para comenzar.
 
 ## Despliegue
 
