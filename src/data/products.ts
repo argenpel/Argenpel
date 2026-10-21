@@ -208,7 +208,7 @@ export const products: Product[] = [
     rollHeightCm: [21, 24],
     images: [
       {
-        src: "/images/products/industrial-double-ply-roll.jpg",
+        src: "/images/products/industrial-double-ply-roll-blanco-puro.jpg",
         alt: "Pack de 2 bobinas industriales de doble hoja",
       },
       {
